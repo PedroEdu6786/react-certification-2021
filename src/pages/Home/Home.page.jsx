@@ -1,38 +1,30 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import React from 'react';
+import { Heading } from '../../theme/components/Foundation.component';
+import videos from '../../mocks/videos.json';
+import VideoPreview from '../../components/VideoPreview';
+import { BodyContainer, PreviewsContainer } from './Home.styles';
+import Layout from '../../components/Layout';
 
 function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
-
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
-
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
+    <Layout>
+      <BodyContainer as="section">
+        {/* Main Title */}
+        <Heading fontSize="2.441rem">Welcome to the challenge!</Heading>
+
+        {/* Video List */}
+        <PreviewsContainer>
+          {videos.items.map((video) => (
+            <VideoPreview
+              key={`${video.id.videoId}${video.snippet.channelId}`}
+              title={video.snippet.title}
+              description={video.snippet.description}
+              thumbnail={video.snippet.thumbnails}
+            />
+          ))}
+        </PreviewsContainer>
+      </BodyContainer>
+    </Layout>
   );
 }
 
