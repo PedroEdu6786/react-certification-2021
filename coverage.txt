@@ -1,0 +1,45 @@
+ PASS  src/components/Header/Header.component.test.jsx (10.279s)
+ PASS  src/components/PreviewList/PreviewList.component.test.jsx (10.287s)
+ PASS  src/pages/Home/Home.page.test.jsx (10.503s)
+-----------------------------|----------|----------|----------|----------|-------------------|
+File                         |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-----------------------------|----------|----------|----------|----------|-------------------|
+All files                    |     96.1 |      100 |    97.67 |    96.05 |                   |
+ src                         |        0 |      100 |      100 |        0 |                   |
+  index.jsx                  |        0 |      100 |      100 |        0 |                 6 |
+ src/components/App          |        0 |      100 |        0 |        0 |                   |
+  App.component.jsx          |        0 |      100 |        0 |        0 |                 6 |
+  index.js                   |        0 |        0 |        0 |        0 |                   |
+ src/components/Header       |      100 |      100 |      100 |      100 |                   |
+  Header.component.jsx       |      100 |      100 |      100 |      100 |                   |
+  Header.styles.js           |      100 |      100 |      100 |      100 |                   |
+  index.js                   |        0 |        0 |        0 |        0 |                   |
+ src/components/Layout       |      100 |      100 |      100 |      100 |                   |
+  Layout.component.jsx       |      100 |      100 |      100 |      100 |                   |
+  index.js                   |        0 |        0 |        0 |        0 |                   |
+ src/components/PreviewList  |      100 |      100 |      100 |      100 |                   |
+  PreviewList.component.jsx  |      100 |      100 |      100 |      100 |                   |
+  PreviewList.styles.js      |      100 |      100 |      100 |      100 |                   |
+  index.js                   |        0 |        0 |        0 |        0 |                   |
+ src/components/VideoPreview |      100 |      100 |      100 |      100 |                   |
+  VideoPreview.component.jsx |      100 |      100 |      100 |      100 |                   |
+  VideoPreview.styles.js     |      100 |      100 |      100 |      100 |                   |
+  index.js                   |        0 |        0 |        0 |        0 |                   |
+ src/pages/Home              |      100 |      100 |      100 |      100 |                   |
+  Home.page.jsx              |      100 |      100 |      100 |      100 |                   |
+  Home.styles.js             |      100 |      100 |      100 |      100 |                   |
+  index.js                   |        0 |        0 |        0 |        0 |                   |
+ src/theme                   |        0 |      100 |      100 |        0 |                   |
+  styles.js                  |        0 |      100 |      100 |        0 |                 3 |
+ src/theme/components        |      100 |      100 |      100 |      100 |                   |
+  Foundation.component.js    |      100 |      100 |      100 |      100 |                   |
+ src/theme/foundations       |      100 |      100 |      100 |      100 |                   |
+  defaultStyles.js           |      100 |      100 |      100 |      100 |                   |
+-----------------------------|----------|----------|----------|----------|-------------------|
+
+Test Suites: 3 passed, 3 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        29.751s
+Ran all test suites.
+Done in 71.54s.

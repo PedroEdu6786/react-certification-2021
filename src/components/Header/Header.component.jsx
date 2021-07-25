@@ -34,11 +34,15 @@ function Header() {
         </Drawer>
 
         {/* Page overlay */}
-        <Overlay display={openDrawer ? 'block' : 'none'} onClick={toggleMenu} />
+        <Overlay
+          data-testid="overlay"
+          display={openDrawer ? 'block' : 'none'}
+          onClick={toggleMenu}
+        />
 
         <LeftNav>
           {/* Burger Icon that displays drawer */}
-          <BurgerContainer onClick={toggleMenu}>
+          <BurgerContainer as="button" onClick={toggleMenu}>
             <GiHamburgerMenu size="2rem" />
           </BurgerContainer>
 

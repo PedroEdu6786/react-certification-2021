@@ -37,6 +37,8 @@ export const SearchContainer = styled(Stack)`
 `;
 
 export const BurgerContainer = styled(Box)`
+  background: none;
+  border: none;
   :hover {
     cursor: pointer;
   }

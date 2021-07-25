@@ -8,9 +8,10 @@ describe('Home page testing', () => {
     render(<HomePage />);
   });
 
-  test('Should render the layout component with the header component', () => {
+  test('Should contain header and preview videos', () => {
     const headerElement = screen.queryByTestId(/header/i);
-
+    const previewListElement = screen.queryByTestId(/preview-list/i);
     expect(headerElement).toBeInTheDocument();
+    expect(previewListElement).toBeInTheDocument();
   });
 });
