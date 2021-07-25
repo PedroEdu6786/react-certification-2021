@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Heading, Image, Stack, Text } from '../../theme/components/Foundation.component';
 
 export const VideoPreviewContainer = styled(Stack)`
+  background-color: white;
+
   max-width: 345px;
   border-radius: 1rem;
   -webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);
@@ -10,7 +12,6 @@ export const VideoPreviewContainer = styled(Stack)`
 
 export const InfoContainer = styled(Stack)`
   padding: 1rem;
-  background-color: white;
   border-radius: 0 0 0.5rem 0.5rem;
 
   * + * {
