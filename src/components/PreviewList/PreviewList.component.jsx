@@ -1,6 +1,5 @@
 import React from 'react';
 import VideoPreview from '../VideoPreview';
-import videos from '../../mocks/videos.json';
 import { PreviewsContainer } from './PreviewList.styles';
 
 const renderVideoItem = (video) => (
@@ -9,15 +8,20 @@ const renderVideoItem = (video) => (
     title={video.snippet.title}
     description={video.snippet.description}
     thumbnail={video.snippet.thumbnails}
+    url={video.id.videoId}
   />
 );
 
-function PreviewList() {
+function PreviewList({ videos }) {
   return (
     <PreviewsContainer data-testid="preview-list" id="preview-list">
       {videos.items.map(renderVideoItem)}
     </PreviewsContainer>
   );
 }
+
+PreviewList.defaultProps = {
+  videos: { items: [] },
+};
 
 export default PreviewList;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Box, Input, Link, Stack } from '../../theme/components/Foundation.component';
+import { Link } from 'react-router-dom';
+import { Box, Input, Stack } from '../../theme/components/Foundation.component';
 
 export const HeaderContainer = styled(Stack)`
   align-items: center;
@@ -7,9 +8,6 @@ export const HeaderContainer = styled(Stack)`
   justify-content: space-between;
   padding: 1.5rem;
   width: 100%;
-
-  -webkit-box-shadow: 0px 5px 23px 1px rgba(0, 0, 0, 0.31);
-  box-shadow: 0px 5px 23px 1px rgba(0, 0, 0, 0.31);
 `;
 
 export const SearchInput = styled(Input)`
@@ -94,6 +92,8 @@ export const RightNav = styled(Stack)`
 `;
 
 export const DrawerItem = styled(Link)`
+  color: black;
+  text-decoration: none;
   :hover,
   :active {
     background-color: #e8e8e8;

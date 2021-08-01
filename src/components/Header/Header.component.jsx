@@ -3,7 +3,6 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { GoSearch } from 'react-icons/go';
 import { FaUserCircle } from 'react-icons/fa';
 import { FiMoon } from 'react-icons/fi';
-import { Box, Stack } from '../../theme/components/Foundation.component';
 import {
   BurgerContainer,
   Drawer,
@@ -15,20 +14,29 @@ import {
   SearchContainer,
   SearchInput,
 } from './Header.styles';
+import { Box, Stack } from '../../theme/components/Foundation.component';
 
 function Header() {
+  const [inputValue, setInputValue] = useState('');
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const toggleMenu = () => {
     setOpenDrawer((prevState) => !prevState);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputValue);
+  };
+
+  const handleChange = (event) => setInputValue(event.target.value);
+
   return (
     <HeaderContainer data-testid="header" as="header">
       <Stack direction="row" align="center" justify="space-between" m="0 auto" w="100%">
         {/* Drawer Menu */}
         <Drawer as="nav" left={openDrawer ? 0 : '-100%'}>
-          <DrawerItem href="#" onClick={toggleMenu}>
+          <DrawerItem to="/" onClick={toggleMenu}>
             Home
           </DrawerItem>
         </Drawer>
@@ -47,11 +55,11 @@ function Header() {
           </BurgerContainer>
 
           {/* Search input */}
-          <SearchContainer>
+          <SearchContainer as="form" onSubmit={handleSubmit}>
             <Box pos="absolute" pl="1rem">
               <GoSearch size="1.125rem" color="#BDBDBD" />
             </Box>
-            <SearchInput />
+            <SearchInput value={inputValue} onChange={handleChange} />
           </SearchContainer>
         </LeftNav>
 

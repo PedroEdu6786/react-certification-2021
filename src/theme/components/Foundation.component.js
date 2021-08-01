@@ -50,6 +50,17 @@ export const Image = styled.img`
   object-fit: ${(props) => props.objectFit};
 `;
 
+export const Container = styled(Grid)`
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  background-color: #f9f9f9;
+
+  @media only screen and (min-width: 768px) {
+    padding: 2rem 3rem;
+  }
+`;
+
 Stack.defaultProps = {
   direction: 'column',
 };

@@ -3,16 +3,17 @@ import {
   InfoContainer,
   Thumbnail,
   ThumbnailContainer,
+  VideoLink,
   VideoPreviewContainer,
   VideoPreviewDescription,
   VideoPreviewTitle,
 } from './VideoPreview.styles';
 
-function VideoPreview({ title, description, thumbnail }) {
+function VideoPreview({ title, description, thumbnail, url }) {
   const { medium: image } = thumbnail;
   return (
-    <>
-      <VideoPreviewContainer>
+    <VideoPreviewContainer>
+      <VideoLink to={`/${url}`}>
         {/* Image Container */}
         <ThumbnailContainer>
           <Thumbnail src={image.url} />
@@ -23,8 +24,8 @@ function VideoPreview({ title, description, thumbnail }) {
           <VideoPreviewTitle as="h3">{title}</VideoPreviewTitle>
           <VideoPreviewDescription>{description}</VideoPreviewDescription>
         </InfoContainer>
-      </VideoPreviewContainer>
-    </>
+      </VideoLink>
+    </VideoPreviewContainer>
   );
 }
 
