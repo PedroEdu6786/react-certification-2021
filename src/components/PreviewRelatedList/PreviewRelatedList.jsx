@@ -9,7 +9,7 @@ import {
 const renderRelatedVideos = (video) => {
   const { snippet, id } = video;
   return (
-    <RelatedLink to={`/${id.videoId}`} key={id.videoId}>
+    <RelatedLink to={`/${id.videoId}`} key={`${snippet.channelId}${id.videoId}`}>
       <RelatedVideoContainer>
         <Image src={snippet.thumbnails.medium.url} w="100px" h="80px" />
         <Text fontSize=".9rem" fontWeight="bold">

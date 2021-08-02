@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GoSearch } from 'react-icons/go';
 import { FaUserCircle } from 'react-icons/fa';
@@ -15,10 +16,14 @@ import {
   SearchInput,
 } from './Header.styles';
 import { Box, Stack } from '../../theme/components/Foundation.component';
+import Context from '../../store/context';
 
 function Header() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('wizeline');
   const [openDrawer, setOpenDrawer] = useState(false);
+  const { globalDispatch } = useContext(Context);
+  const location = useLocation();
+  const history = useHistory();
 
   const toggleMenu = () => {
     setOpenDrawer((prevState) => !prevState);
@@ -26,7 +31,8 @@ function Header() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputValue);
+    if (location.pathname !== '/') history.push('/');
+    globalDispatch({ type: 'SET_INPUT', payload: inputValue });
   };
 
   const handleChange = (event) => setInputValue(event.target.value);

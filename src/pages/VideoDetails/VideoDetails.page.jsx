@@ -1,24 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router';
 import PreviewRelatedList from '../../components/PreviewRelatedList/PreviewRelatedList';
 import { Heading, Text } from '../../theme/components/Foundation.component';
 import { BodyContainer, VideoContent, VideoPlayer } from './VideoDetails.styles';
-import videos from '../../mocks/videos.json';
+import Context from '../../store/context';
 
 function VideoDetails() {
   const { videoId } = useParams();
+  const { globalState } = useContext(Context);
 
-  useEffect(() => {}, [videoId]);
+  const { videos } = globalState;
+
+  useEffect(() => {}, [videoId, videos]);
+
+  const videoData = videos.items.find((video) => video.id.videoId === videoId);
+
   return (
     <BodyContainer>
       <VideoContent>
         <VideoPlayer src={`https://www.youtube.com/embed/${videoId}`} />
-        <Heading>Title</Heading>
-        <Text fontSize=".9rem">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, possimus. Vitae
-          laborum recusandae nobis eum quo amet excepturi provident voluptas. Facilis
-          distinctio nobis debitis repudiandae minima. Recusandae magni aut odit!
-        </Text>
+        <Heading>{videoData.snippet.title}</Heading>
+        <Text fontSize=".9rem">{videoData.snippet.description}</Text>
       </VideoContent>
       <PreviewRelatedList videos={videos} />
     </BodyContainer>

@@ -5,21 +5,24 @@ import { GlobalStyles } from '../../theme/styles';
 import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails';
 import Layout from '../Layout';
+import GlobalStateProvider from '../../store/GlobalStateProvider';
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/:videoId">
-            <VideoDetails />
-          </Route>
-        </Switch>
-      </Layout>
+      <GlobalStateProvider>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/:videoId">
+              <VideoDetails />
+            </Route>
+          </Switch>
+        </Layout>
+      </GlobalStateProvider>
     </BrowserRouter>
   );
 }
