@@ -17,6 +17,7 @@ import {
 } from './Header.styles';
 import { Box, Stack } from '../../theme/components/Foundation.component';
 import Context from '../../store/context';
+import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 
 function Header() {
   const [inputValue, setInputValue] = useState('wizeline');
@@ -24,6 +25,7 @@ function Header() {
   const { globalDispatch } = useContext(Context);
   const location = useLocation();
   const history = useHistory();
+  const { fetchVideos } = useYoutubeApi();
 
   const toggleMenu = () => {
     setOpenDrawer((prevState) => !prevState);
@@ -31,8 +33,11 @@ function Header() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (location.pathname !== '/') history.push('/');
+
+    fetchVideos(inputValue);
     globalDispatch({ type: 'SET_INPUT', payload: inputValue });
+
+    if (location.pathname !== '/') history.push('/');
   };
 
   const handleChange = (event) => setInputValue(event.target.value);

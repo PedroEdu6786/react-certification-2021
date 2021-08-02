@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import { SET_INPUT, SET_VIDEOS } from '../constants';
 
-const defaultState = { input: 'wizeline', videos: {} };
+const defaultState = { input: 'wizeline', videos: null };
 
 const reducer = (state, action) => {
   switch (action.type) {

@@ -6,27 +6,22 @@ import Context from '../../store/context';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 
 function HomePage() {
-  const { data, error, fetchVideos } = useYoutubeApi();
-  const { globalState, globalDispatch } = useContext(Context);
+  const { error, fetchVideos } = useYoutubeApi();
+  const { globalState } = useContext(Context);
 
-  const { input } = globalState;
-
-  useEffect(() => {
-    fetchVideos(input);
-    // eslint-disable-next-line
-  }, [input]);
+  const { input, videos } = globalState;
 
   useEffect(() => {
-    globalDispatch({ type: 'SET_VIDEOS', payload: data });
+    if (!videos) fetchVideos(input);
     // eslint-disable-next-line
-  }, [data]);
+  }, [videos]);
 
   return (
     <BodyContainer as="section">
       {/* Main Title */}
       <Heading fontSize="2.441rem">Welcome to the challenge!</Heading>
       {/* Video List */}
-      {data && <PreviewList videos={data} />}
+      {videos && <PreviewList videos={videos} />}
       {/* Error when data fetching */}
       {error && <Heading>There was an error</Heading>}
     </BodyContainer>
