@@ -34,15 +34,4 @@ describe('Video details page', () => {
     const { image } = build();
     expect(image()).toBeDefined();
   });
-
-  // it('displays an asynchronous video', async () => {
-  //   const { asyncVideo } = build();
-  //   expect(await asyncVideo()).toBeDefined();
-  // });
-
-  // it('renders a list of videos', async () => {
-  //   const { videosList } = build();
-
-  //   expect(await videosList()).toHaveLength(YOUTUBE_MAX_RESULTS);
-  // });
 });

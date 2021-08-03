@@ -1,10 +1,11 @@
 import React from 'react';
-import { queryByTestId, render } from '@testing-library/react';
+import { act, queryByTestId, render, screen } from '@testing-library/react';
 
 import HomePage from './index';
+import GlobalStateProvider from '../../store/GlobalStateProvider';
 
 const build = () => {
-  const { container } = render(<HomePage />);
+  const { container } = render(<HomePage />, { wrapper: GlobalStateProvider });
 
   return {
     container,
@@ -19,12 +20,16 @@ const build = () => {
 
 describe('Home page testing', () => {
   it('renders', () => {
-    build();
+    act(() => {
+      build();
+    });
   });
 
   it('contains header and preview videos', () => {
-    const { header, previewVideos } = build();
-    expect(header()).toBeDefined();
-    expect(previewVideos()).toBeDefined();
+    act(() => {
+      const { header, previewVideos } = build();
+      expect(header()).toBeDefined();
+      expect(previewVideos()).toBeDefined();
+    });
   });
 });
