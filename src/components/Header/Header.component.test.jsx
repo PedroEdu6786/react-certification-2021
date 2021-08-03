@@ -1,18 +1,30 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { fireEvent, queryAllByRole, queryByTestId, render } from '@testing-library/react';
 import Header from './Header.component';
 
-describe('Home page testing', () => {
-  beforeAll(() => {
-    render(<Header />);
+const build = () => {
+  const { container } = render(<Header />, { wrapper: MemoryRouter });
+
+  return {
+    container,
+
+    /** Queries for single elements */
+    overlay: () => queryByTestId(container, /overlay/i),
+
+    /** Queries for multiple elements */
+    button: () => queryAllByRole(container, 'button'),
+  };
+};
+
+describe('Header testing', () => {
+  it('renders', () => {
+    build();
   });
+  it('opens drawer on button click', () => {
+    const { button, overlay } = build();
 
-  test('Should open drawer on button click', () => {
-    const drawerBtn = screen.queryAllByRole('button')[0];
-
-    fireEvent.click(drawerBtn);
-    const expectedOverlay = screen.queryByTestId(/overlay/i);
-
-    expect(expectedOverlay).toBeInTheDocument();
+    fireEvent.click(button()[0]);
+    expect(overlay()).toBeInTheDocument();
   });
 });

@@ -4,12 +4,13 @@ import { BodyContainer } from './Home.styles';
 import PreviewList from '../../components/PreviewList';
 import Context from '../../store/context';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
+import { defaultState } from '../../utils/constants';
 
 function HomePage() {
   const { error, fetchVideos } = useYoutubeApi();
   const { globalState } = useContext(Context);
 
-  const { input, videos } = globalState;
+  const { input, videos } = globalState || defaultState;
 
   useEffect(() => {
     if (!videos) fetchVideos(input);

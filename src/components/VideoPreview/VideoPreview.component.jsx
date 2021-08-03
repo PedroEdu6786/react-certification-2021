@@ -10,7 +10,7 @@ import {
 } from './VideoPreview.styles';
 
 function VideoPreview({ title, description, thumbnail, url }) {
-  const { medium: image } = thumbnail;
+  const { medium: image } = thumbnail || { medium: { url: '' } };
   return (
     <VideoPreviewContainer>
       <VideoLink to={`/${url}`}>
