@@ -6,16 +6,18 @@ import Context from '../../store/context';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 import { defaultState } from '../../utils/constants';
 
+export const fetchVideosEffect = ({ videos, fetchVideos, input }) => () => {
+  if (!videos) fetchVideos(input);
+};
+
 function HomePage() {
   const { error, fetchVideos } = useYoutubeApi();
   const { globalState } = useContext(Context);
 
   const { input, videos } = globalState || defaultState;
 
-  useEffect(() => {
-    if (!videos) fetchVideos(input);
-    // eslint-disable-next-line
-  }, [videos]);
+  // eslint-disable-next-line
+  useEffect(fetchVideosEffect({ videos, fetchVideos, input }), [videos]);
 
   return (
     <BodyContainer as="section">
