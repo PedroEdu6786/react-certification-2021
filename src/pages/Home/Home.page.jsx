@@ -2,19 +2,20 @@ import React, { useEffect, useContext } from 'react';
 import { Heading } from '../../theme/components/Foundation.component';
 import { BodyContainer } from './Home.styles';
 import PreviewList from '../../components/PreviewList';
-import Context from '../../store/context';
+import VideosContext from '../../providers/VideosProvider/VideosContext';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
-import { defaultState } from '../../utils/constants';
 
-export const fetchVideosEffect = ({ videos, fetchVideos, input }) => () => {
-  if (!videos) fetchVideos(input);
-};
+export const fetchVideosEffect =
+  ({ videos, fetchVideos, input }) =>
+  () => {
+    if (!videos) fetchVideos(input);
+  };
 
 function HomePage() {
   const { error, fetchVideos } = useYoutubeApi();
-  const { globalState } = useContext(Context);
+  const { globalState } = useContext(VideosContext);
 
-  const { input, videos } = globalState || defaultState;
+  const { input, videos } = globalState;
 
   // eslint-disable-next-line
   useEffect(fetchVideosEffect({ videos, fetchVideos, input }), [videos]);

@@ -3,9 +3,15 @@ import { MemoryRouter } from 'react-router';
 import { findAllByRole, findByRole, queryByRole, render } from '@testing-library/react';
 
 import VideoDetails from './index';
+import VideosProvider from '../../providers/VideosProvider';
 
 const build = () => {
-  const { container } = render(<VideoDetails />, { wrapper: MemoryRouter });
+  const { container } = render(
+    <VideosProvider>
+      <VideoDetails />
+    </VideosProvider>,
+    { wrapper: MemoryRouter }
+  );
 
   return {
     container,

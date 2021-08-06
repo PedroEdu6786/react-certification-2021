@@ -2,10 +2,10 @@ import React from 'react';
 import { cleanup, queryByTestId, render } from '@testing-library/react';
 
 import HomePage from './index';
-import GlobalStateProvider from '../../store/GlobalStateProvider';
+import VideosProvider from '../../providers/VideosProvider';
 
 const build = () => {
-  const { container } = render(<HomePage />, { wrapper: GlobalStateProvider });
+  const { container } = render(<HomePage />, { wrapper: VideosProvider });
 
   return {
     container,

@@ -3,14 +3,13 @@ import { useParams } from 'react-router';
 import PreviewRelatedList from '../../components/PreviewRelatedList';
 import { Heading, Text } from '../../theme/components/Foundation.component';
 import { BodyContainer, VideoContent, VideoPlayer } from './VideoDetails.styles';
-import Context from '../../store/context';
-import { defaultState } from '../../utils/constants';
+import VideosContext from '../../providers/VideosProvider/VideosContext';
 
 function VideoDetails() {
   const { videoId } = useParams();
-  const { globalState } = useContext(Context);
+  const { globalState } = useContext(VideosContext);
 
-  const { videos } = globalState || defaultState;
+  const { videos } = globalState;
 
   // re renders component when either videos or page updates
   useEffect(() => {}, [videoId, videos]);

@@ -3,13 +3,13 @@ import { MemoryRouter } from 'react-router';
 import { fireEvent, queryByTestId, render } from '@testing-library/react';
 
 import Search from './index';
-import GlobalStateProvider from '../../store/GlobalStateProvider';
+import VideosProvider from '../../providers/VideosProvider';
 
 const build = () => {
   const { container } = render(
-    <GlobalStateProvider>
+    <VideosProvider>
       <Search />
-    </GlobalStateProvider>,
+    </VideosProvider>,
     { wrapper: MemoryRouter }
   );
 

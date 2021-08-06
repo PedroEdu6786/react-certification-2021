@@ -5,13 +5,13 @@ import { GlobalStyles } from '../../theme/styles';
 import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails';
 import Layout from '../Layout';
-import GlobalStateProvider from '../../store/GlobalStateProvider';
+import VideosProvider from '../../providers/VideosProvider';
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <GlobalStateProvider>
+      <VideosProvider>
         <Layout>
           <Switch>
             <Route exact path="/">
@@ -22,7 +22,7 @@ function App() {
             </Route>
           </Switch>
         </Layout>
-      </GlobalStateProvider>
+      </VideosProvider>
     </BrowserRouter>
   );
 }

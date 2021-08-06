@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import useYoutubeApi from './useYoutubeApi';
-import GlobalStateProvider from '../../store/GlobalStateProvider';
+import VideosProvider from '../../providers/VideosProvider';
 
 describe('useYoutubeApi hook', () => {
   afterEach(cleanup);
@@ -15,9 +15,9 @@ describe('useYoutubeApi hook', () => {
     expect(error).toBe(null);
   });
 
-  it('loads correctly when calling api', async () => {
+  it('sets loading correctly when calling api', async () => {
     const { result, waitForNextUpdate } = renderHook(() => useYoutubeApi(), {
-      wrapper: GlobalStateProvider,
+      wrapper: VideosProvider,
     });
     const { fetchVideos } = result.current;
 
@@ -27,15 +27,15 @@ describe('useYoutubeApi hook', () => {
       fetchVideos();
       await waitForNextUpdate();
       expect(result.current.loading).toBe(true);
+      await waitForNextUpdate();
     });
 
-    await waitForNextUpdate();
     expect(result.current.loading).toBe(false);
   });
 
   it('fetches data from api', async () => {
     const { result, waitForNextUpdate } = renderHook(() => useYoutubeApi(), {
-      wrapper: GlobalStateProvider,
+      wrapper: VideosProvider,
     });
     const { fetchVideos } = result.current;
 
