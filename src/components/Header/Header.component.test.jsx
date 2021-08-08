@@ -2,9 +2,15 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, queryAllByRole, queryByTestId, render } from '@testing-library/react';
 import Header from './Header.component';
+import ThemeContentProvider from '../../providers/ThemeContentProvider';
 
 const build = () => {
-  const { container } = render(<Header />, { wrapper: MemoryRouter });
+  const { container } = render(
+    <ThemeContentProvider>
+      <Header />
+    </ThemeContentProvider>,
+    { wrapper: MemoryRouter }
+  );
 
   return {
     container,

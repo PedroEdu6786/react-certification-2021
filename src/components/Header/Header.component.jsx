@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import React, { useState, useContext } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
-import { FiMoon } from 'react-icons/fi';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import {
+  Burger,
   BurgerContainer,
   Drawer,
   DrawerItem,
@@ -10,12 +10,26 @@ import {
   LeftNav,
   Overlay,
   RightNav,
+  ThemeButton,
 } from './Header.styles';
 import { Stack } from '../../theme/components/Foundation.component';
 import Search from '../Search';
+import ThemeContext from '../../providers/ThemeContentProvider/ThemeContext';
 
 function Header() {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const { globalState, globalDispatch } = useContext(ThemeContext);
+
+  const { theme } = globalState;
+
+  const handleTheme = () => {
+    if (theme.theme === 'light') {
+      globalDispatch({ type: 'SET_DARK_THEME' });
+      return;
+    }
+
+    globalDispatch({ type: 'SET_LIGHT_THEME' });
+  };
 
   const toggleMenu = () => {
     setOpenDrawer((prevState) => !prevState);
@@ -41,7 +55,7 @@ function Header() {
         <LeftNav>
           {/* Burger Icon that displays drawer */}
           <BurgerContainer as="button" onClick={toggleMenu}>
-            <GiHamburgerMenu size="2rem" />
+            <Burger />
           </BurgerContainer>
 
           {/* Search input */}
@@ -49,7 +63,13 @@ function Header() {
         </LeftNav>
 
         <RightNav>
-          <FiMoon size="2.5rem" color="#BDBDBD" />
+          <ThemeButton onClick={handleTheme}>
+            {theme.theme === 'light' ? (
+              <FiMoon size="2.5rem" color="#BDBDBD" />
+            ) : (
+              <FiSun size="2.5rem" color="#BDBDBD" />
+            )}
+          </ThemeButton>
           <FaUserCircle size="2.5rem" color="#BDBDBD" />
         </RightNav>
       </Stack>

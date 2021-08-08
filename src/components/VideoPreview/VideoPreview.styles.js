@@ -4,11 +4,11 @@ import { Heading, Image, Stack, Text } from '../../theme/components/Foundation.c
 
 export const VideoLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${(props) => props.theme.font};
 `;
 
 export const VideoPreviewContainer = styled(Stack)`
-  background-color: white;
+  background-color: ${(props) => props.theme.cardBackground};
 
   max-width: 345px;
   border-radius: 10px;
@@ -17,7 +17,7 @@ export const VideoPreviewContainer = styled(Stack)`
   transition: 0.3s;
 
   :hover {
-    background-color: #e5e5e5;
+    background-color: ${(props) => props.theme.shadow};
   }
 `;
 
@@ -52,7 +52,7 @@ export const VideoPreviewTitle = styled(Heading)`
 `;
 
 export const VideoPreviewDescription = styled(Text)`
-  color: #575757;
+  color: ${(props) => props.theme.font};
   line-height: 1.5rem;
   font-size: 1rem;
 `;

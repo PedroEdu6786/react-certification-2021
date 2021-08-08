@@ -5,23 +5,35 @@ export const Box = styled.div`
   ${defaultStyles}
 `;
 
+export const Button = styled.button`
+  ${defaultStyles};
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+`;
+
 export const Input = styled.input`
   ${defaultStyles};
   ${defaultStyles};
-  background-color: #f5f5f5;
+  background-color: ${(props) => props.theme.background};
   border: 2px solid #cdcdcd;
   border-radius: 0.25rem;
   font-family: 'Montserrat', sans-serif;
 `;
 
 export const Heading = styled.h1`
-  ${defaultStyles}
-  ${textDefaultStyles}
+  ${defaultStyles};
+  ${textDefaultStyles};
+  color: ${(props) => props.theme.font};
 `;
 
 export const Text = styled.p`
-  ${defaultStyles}
-  ${textDefaultStyles}
+  ${defaultStyles};
+  ${textDefaultStyles};
+  color: ${(props) => props.theme.font};
 `;
 
 export const Stack = styled(Box)`
@@ -42,7 +54,7 @@ export const Link = styled.a`
   ${defaultStyles};
   ${textDefaultStyles};
   text-decoration: none;
-  color: black;
+  color: ${(props) => props.theme.font};
 `;
 
 export const Image = styled.img`
@@ -54,7 +66,7 @@ export const Container = styled(Grid)`
   width: 100%;
   gap: 2rem;
   padding: 2rem 2rem;
-  background-color: #f9f9f9;
+  background-color: ${(props) => props.theme.background};
 
   @media only screen and (min-width: 768px) {
     padding: 2rem 3rem;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Box, Stack } from '../../theme/components/Foundation.component';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { Box, Button, Stack } from '../../theme/components/Foundation.component';
 
 export const HeaderContainer = styled(Stack)`
   align-items: center;
@@ -8,6 +9,7 @@ export const HeaderContainer = styled(Stack)`
   justify-content: space-between;
   padding: 1.5rem;
   width: 100%;
+  background-color: ${(props) => props.theme.header};
 `;
 
 export const BurgerContainer = styled(Box)`
@@ -19,7 +21,7 @@ export const BurgerContainer = styled(Box)`
 `;
 
 export const Drawer = styled(Stack)`
-  background-color: #f5f5f5;
+  background-color: ${(props) => props.theme.background};
   height: 150vh;
   left: ${(props) => props.left};
   position: fixed;
@@ -59,7 +61,7 @@ export const RightNav = styled(Stack)`
   flex-direction: row;
   display: none;
   @media only screen and (min-width: 768px) {
-    display: block;
+    display: flex;
 
     * + * {
       margin-left: 1rem;
@@ -67,13 +69,20 @@ export const RightNav = styled(Stack)`
   }
 `;
 
+export const ThemeButton = styled(Button)``;
+
 export const DrawerItem = styled(Link)`
-  color: black;
+  color: ${(props) => props.theme.font};
   text-decoration: none;
   :hover,
   :active {
-    background-color: #e8e8e8;
+    background-color: ${(props) => props.theme.shadow};
     transition: 0.4s;
     cursor: pointer;
   }
+`;
+
+export const Burger = styled(GiHamburgerMenu)`
+  color: ${(props) => props.theme.font};
+  font-size: 2rem;
 `;
