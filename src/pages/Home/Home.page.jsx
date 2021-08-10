@@ -5,11 +5,9 @@ import PreviewList from '../../components/PreviewList';
 import VideosContext from '../../providers/VideosProvider/VideosContext';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 
-export const fetchVideosEffect =
-  ({ videos, fetchVideos, input }) =>
-  () => {
-    if (!videos) fetchVideos(input);
-  };
+export const fetchVideosEffect = ({ videos, fetchVideos, input }) => () => {
+  if (!videos) fetchVideos(input);
+};
 
 function HomePage() {
   const { error, fetchVideos } = useYoutubeApi();
