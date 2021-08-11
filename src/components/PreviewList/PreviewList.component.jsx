@@ -14,7 +14,7 @@ const renderVideoItem = (video) => (
 
 function PreviewList({ videos }) {
   return (
-    <PreviewsContainer data-testid="preview-list" id="preview-list">
+    <PreviewsContainer data-testid="previewList" id="previewList">
       {videos.items.map(renderVideoItem)}
     </PreviewsContainer>
   );
