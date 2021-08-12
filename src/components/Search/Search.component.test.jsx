@@ -1,9 +1,11 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { fireEvent, queryByTestId, render } from '@testing-library/react';
+import { fireEvent, queryByTestId, render, waitFor } from '@testing-library/react';
 
 import Search from './index';
 import VideosProvider from '../../providers/VideosProvider';
+import { youtubeClient } from '../../utils/helpers';
+import videos from '../../mocks/videos.json';
 
 const build = () => {
   const { container } = render(
@@ -28,9 +30,13 @@ describe('Search component', () => {
     build();
   });
 
-  it('submits form', () => {
+  it('submits form', async () => {
+    youtubeClient.mockImplementationOnce(() => Promise.resolve({ data: videos }));
     const { input } = build();
 
-    fireEvent.submit(input());
+    await waitFor(() => {
+      fireEvent.submit(input());
+      expect(youtubeClient).toBeCalledTimes(1);
+    });
   });
 });

@@ -1,10 +1,7 @@
 import React from 'react';
 import useGlobalState from '../../utils/hooks/useGlobalState';
 import VideosContext from './VideosContext';
-import { videosReducer } from './videosReducer';
-
-// default state for useContext
-export const defaultState = { input: 'wizeline', videos: null };
+import { defaultState, videosReducer } from './videosReducer';
 
 const VideosProvider = ({ children }) => {
   return (

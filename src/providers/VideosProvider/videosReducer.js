@@ -1,6 +1,9 @@
 import { SET_INPUT, SET_VIDEOS } from './videoTypes';
 
-export const videosReducer = (state, action) => {
+// default state for useContext
+export const defaultState = { input: 'wizeline', videos: null };
+
+export const videosReducer = (state = defaultState, action) => {
   switch (action.type) {
     case SET_INPUT:
       return {

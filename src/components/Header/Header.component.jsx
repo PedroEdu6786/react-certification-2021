@@ -24,11 +24,11 @@ function Header() {
 
   const handleTheme = () => {
     if (theme.theme === 'light') {
-      globalDispatch({ type: 'SET_DARK_THEME' });
+      globalDispatch({ type: 'SET_THEME', payload: 'dark' });
       return;
     }
 
-    globalDispatch({ type: 'SET_LIGHT_THEME' });
+    globalDispatch({ type: 'SET_THEME', payload: 'light' });
   };
 
   const toggleMenu = () => {
