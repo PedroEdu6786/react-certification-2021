@@ -1,6 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, queryAllByRole, queryByTestId, render } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import Header from './Header.component';
 import ThemeContentProvider from '../../providers/ThemeContentProvider';
 
@@ -17,6 +18,9 @@ const build = () => {
 
     /** Queries for single elements */
     overlay: () => queryByTestId(container, /overlay/i),
+    themeButton: () => queryByTestId(container, /themeButton/i),
+    darkTheme: () => queryByTestId(container, /darkTheme/i),
+    lightTheme: () => queryByTestId(container, /lightTheme/i),
 
     /** Queries for multiple elements */
     button: () => queryAllByRole(container, 'button'),
@@ -27,10 +31,28 @@ describe('Header testing', () => {
   it('renders', () => {
     build();
   });
+
   it('opens drawer on button click', () => {
     const { button, overlay } = build();
 
     fireEvent.click(button()[0]);
     expect(overlay()).toBeInTheDocument();
+  });
+
+  it('toggles theme on button click', () => {
+    const { lightTheme, darkTheme, themeButton } = build();
+    expect(lightTheme()).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(themeButton());
+    });
+
+    expect(darkTheme()).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(themeButton());
+    });
+
+    expect(lightTheme()).toBeInTheDocument();
   });
 });

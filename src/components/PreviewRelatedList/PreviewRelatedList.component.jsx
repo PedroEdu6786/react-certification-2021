@@ -6,7 +6,7 @@ import {
   RelatedVideoContainer,
 } from './PreviewRelatedList.styles';
 
-const renderRelatedVideos = (video) => {
+export const renderRelatedVideos = (video) => {
   const { snippet, id } = video;
   return (
     <RelatedLink to={`/${id.videoId}`} key={`${snippet.channelId}${id.videoId}`}>

@@ -63,11 +63,11 @@ function Header() {
         </LeftNav>
 
         <RightNav>
-          <ThemeButton onClick={handleTheme}>
+          <ThemeButton as="button" data-testid="themeButton" onClick={handleTheme}>
             {theme.theme === 'light' ? (
-              <FiMoon size="2.5rem" color="#BDBDBD" />
+              <FiMoon data-testid="lightTheme" size="2.5rem" color="#BDBDBD" />
             ) : (
-              <FiSun size="2.5rem" color="#BDBDBD" />
+              <FiSun data-testid="darkTheme" size="2.5rem" color="#BDBDBD" />
             )}
           </ThemeButton>
           <FaUserCircle size="2.5rem" color="#BDBDBD" />
