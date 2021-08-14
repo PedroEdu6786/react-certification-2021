@@ -8,11 +8,11 @@ import {
   DrawerItem,
   HeaderContainer,
   LeftNav,
+  Navigation,
   Overlay,
   RightNav,
   ThemeButton,
 } from './Header.styles';
-import { Stack } from '../../theme/components/Foundation.component';
 import Search from '../Search';
 import ThemeContext from '../../providers/ThemeContentProvider/ThemeContext';
 
@@ -37,20 +37,16 @@ function Header() {
 
   return (
     <HeaderContainer data-testid="header" as="header">
-      <Stack direction="row" align="center" justify="space-between" m="0 auto" w="100%">
+      <Navigation>
         {/* Drawer Menu */}
-        <Drawer as="nav" left={openDrawer ? 0 : '-100%'}>
+        <Drawer as="nav" left={openDrawer}>
           <DrawerItem to="/" onClick={toggleMenu}>
             Home
           </DrawerItem>
         </Drawer>
 
         {/* Page overlay */}
-        <Overlay
-          data-testid="overlay"
-          display={openDrawer ? 'block' : 'none'}
-          onClick={toggleMenu}
-        />
+        <Overlay data-testid="overlay" show={openDrawer} onClick={toggleMenu} />
 
         <LeftNav>
           {/* Burger Icon that displays drawer */}
@@ -72,7 +68,7 @@ function Header() {
           </ThemeButton>
           <FaUserCircle size="2.5rem" color="#BDBDBD" />
         </RightNav>
-      </Stack>
+      </Navigation>
     </HeaderContainer>
   );
 }

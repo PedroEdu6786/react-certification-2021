@@ -2,7 +2,7 @@ import React from 'react';
 import VideoPreview from '../VideoPreview';
 import { PreviewsContainer } from './PreviewList.styles';
 
-const renderVideoItem = (video) => (
+export const renderVideoItem = (video) => (
   <VideoPreview
     key={`${video.id.videoId}${video.snippet.channelId}`}
     title={video.snippet.title}

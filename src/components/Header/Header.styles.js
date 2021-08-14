@@ -12,6 +12,14 @@ export const HeaderContainer = styled(Stack)`
   background-color: ${(props) => props.theme.header};
 `;
 
+export const Navigation = styled(Stack)`
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+`;
+
 export const BurgerContainer = styled(Box)`
   background: none;
   border: none;
@@ -23,7 +31,6 @@ export const BurgerContainer = styled(Box)`
 export const Drawer = styled(Stack)`
   background-color: ${(props) => props.theme.background};
   height: 150vh;
-  left: ${(props) => props.left};
   position: fixed;
   top: 0;
   width: 60%;
@@ -33,6 +40,8 @@ export const Drawer = styled(Stack)`
 
   max-width: 300px;
 
+  left: ${(props) => (props.left ? 0 : '-100%')};
+
   *,
   * + * {
     padding: 1rem 2rem;
@@ -41,7 +50,7 @@ export const Drawer = styled(Stack)`
 
 export const Overlay = styled(Box)`
   background-color: rgba(84, 84, 84, 0.4);
-  display: ${(props) => props.display};
+  display: ${(props) => (props.show ? 'block' : 'none')};
   height: 200vh;
   left: 0;
   padding: 2rem;

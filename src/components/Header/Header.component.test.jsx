@@ -1,6 +1,12 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { fireEvent, queryAllByRole, queryByTestId, render } from '@testing-library/react';
+import {
+  fireEvent,
+  queryAllByRole,
+  queryByRole,
+  queryByTestId,
+  render,
+} from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Header from './Header.component';
 import ThemeContentProvider from '../../providers/ThemeContentProvider';
@@ -17,6 +23,7 @@ const build = () => {
     container,
 
     /** Queries for single elements */
+    drawer: () => queryByRole(container, 'navigation'),
     overlay: () => queryByTestId(container, /overlay/i),
     themeButton: () => queryByTestId(container, /themeButton/i),
     darkTheme: () => queryByTestId(container, /darkTheme/i),
@@ -33,10 +40,14 @@ describe('Header testing', () => {
   });
 
   it('opens drawer on button click', () => {
-    const { button, overlay } = build();
+    const { button, overlay, drawer } = build();
+    expect(overlay()).toHaveStyle('display: none');
+    expect(drawer()).toHaveStyle('left: -100%');
 
     fireEvent.click(button()[0]);
     expect(overlay()).toBeInTheDocument();
+    expect(drawer()).toHaveStyle('left: 0');
+    expect(overlay()).toHaveStyle('display: block');
   });
 
   it('toggles theme on button click', () => {
