@@ -3,8 +3,10 @@ import {
   cleanup,
   queryByRole,
   queryByTestId,
+  findByRole,
   render,
   waitFor,
+  findByTestId,
 } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
@@ -26,8 +28,10 @@ const build = () => {
 
     /** Queries for single elements */
     header: () => queryByTestId(container, /header/i),
-    previewVideos: () => queryByTestId(container, /previewList/i),
-    title: () => queryByRole(container, 'heading', { name: 'Welcome to the challenge!' }),
+    previewVideos: () => findByTestId(container, /previewList/i),
+    title: () =>
+      queryByRole(container, 'heading', { name: /Welcome to the challenge!/i }),
+    errorHeading: () => findByRole(container, 'heading', { name: /There was an error/i }),
 
     /** Queries for multiple elements */
   };
@@ -55,7 +59,16 @@ describe('Home page testing', () => {
     const { previewVideos } = build();
     expect(youtubeClient).toBeCalledTimes(1);
     await waitFor(async () => {
-      expect(await previewVideos()).toBeDefined();
+      expect(await previewVideos()).toBeInTheDocument();
+    });
+  });
+
+  it('loads error message for API error response', async () => {
+    youtubeClient.mockImplementationOnce(() => Promise.reject(new Error('fail')));
+    const { errorHeading } = build();
+    expect(youtubeClient).toBeCalledTimes(1);
+    await waitFor(async () => {
+      expect(await errorHeading()).toBeInTheDocument();
     });
   });
 });
