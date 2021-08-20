@@ -9,7 +9,7 @@ import {
 import { MemoryRouter } from 'react-router';
 
 import HomePage from './index';
-import VideosProvider from '../../providers/VideosProvider';
+import VideosProvider from '../../providers/VideoProvider';
 import { youtubeClient } from '../../utils/helpers';
 import videos from '../../mocks/videos.json';
 

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { GoSearch } from 'react-icons/go';
 import { useHistory, useLocation } from 'react-router';
-import VideosContext from '../../providers/VideosProvider/VideosContext';
+import VideoContext from '../../providers/VideoProvider/VideoContext';
+import { setInputAction } from '../../providers/VideoProvider/VideoProvider.actions';
 import { Box } from '../../theme/components/Foundation.component';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 import { SearchContainer, SearchInput } from './Search.styles';
@@ -11,13 +12,13 @@ function Search() {
   const location = useLocation();
   const history = useHistory();
   const { fetchVideos } = useYoutubeApi();
-  const { globalDispatch } = useContext(VideosContext);
+  const { globalDispatch } = useContext(VideoContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     fetchVideos(inputValue);
-    globalDispatch({ type: 'SET_INPUT', payload: inputValue });
+    globalDispatch(setInputAction(inputValue));
 
     // redirect to home page after every search if not in homepage
     if (location.pathname !== '/') history.push('/');

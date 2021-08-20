@@ -15,6 +15,7 @@ import {
 } from './Header.styles';
 import Search from '../Search';
 import ThemeContext from '../../providers/ThemeContentProvider/ThemeContext';
+import { setThemeAction } from '../../providers/ThemeContentProvider/ThemeContextProvider.actions';
 
 function Header() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -24,11 +25,11 @@ function Header() {
 
   const handleTheme = () => {
     if (theme.theme === 'light') {
-      globalDispatch({ type: 'SET_THEME', payload: 'dark' });
+      globalDispatch(setThemeAction('dark'));
       return;
     }
 
-    globalDispatch({ type: 'SET_THEME', payload: 'light' });
+    globalDispatch(setThemeAction('light'));
   };
 
   const toggleMenu = () => {

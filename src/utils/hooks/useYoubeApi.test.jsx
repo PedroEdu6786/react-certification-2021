@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import useYoutubeApi from './useYoutubeApi';
-import VideosProvider from '../../providers/VideosProvider';
+import VideosProvider from '../../providers/VideoProvider';
 import { youtubeClient } from '../helpers';
 
 const build = () => {

@@ -5,7 +5,7 @@ import { GlobalStyles } from '../../theme/styles';
 import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails';
 import Layout from '../Layout';
-import VideosProvider from '../../providers/VideosProvider';
+import VideoProvider from '../../providers/VideoProvider';
 import ThemeContentProvider from '../../providers/ThemeContentProvider';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <ThemeContentProvider>
         <GlobalStyles />
-        <VideosProvider>
+        <VideoProvider>
           <Layout>
             <Switch>
               <Route exact path="/">
@@ -24,7 +24,7 @@ function App() {
               </Route>
             </Switch>
           </Layout>
-        </VideosProvider>
+        </VideoProvider>
       </ThemeContentProvider>
     </BrowserRouter>
   );

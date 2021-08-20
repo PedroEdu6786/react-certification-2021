@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
-import VideosContext from '../../providers/VideosProvider/VideosContext';
+import VideosContext from '../../providers/VideoProvider/VideoContext';
+import { setVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
 import { youtubeClient, buildQueryParams } from '../helpers';
 
 const useYoutubeApi = () => {
@@ -16,7 +17,7 @@ const useYoutubeApi = () => {
       });
       const resp = await youtubeClient(`/search?${queryParams}`);
 
-      globalDispatch({ type: 'SET_VIDEOS', payload: resp.data });
+      globalDispatch(setVideosAction(resp.data));
       setData(resp.data);
     } catch (err) {
       setError(err);

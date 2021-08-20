@@ -1,4 +1,4 @@
-import { SET_THEME } from './themeTypes';
+import { SET_THEME } from './ThemeContextProvider.types';
 import themes from '../../theme/themes';
 
 // default state for useContext

@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router';
 import { findAllByRole, findByRole, queryByRole, render } from '@testing-library/react';
 
 import VideoDetails from './index';
-import VideosProvider from '../../providers/VideosProvider';
+import VideosProvider from '../../providers/VideoProvider';
 
 const build = () => {
   const { container } = render(

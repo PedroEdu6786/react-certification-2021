@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import PreviewRelatedList from '../../components/PreviewRelatedList';
 import { Heading, Text } from '../../theme/components/Foundation.component';
 import { BodyContainer, VideoContent, VideoPlayer } from './VideoDetails.styles';
-import VideosContext from '../../providers/VideosProvider/VideosContext';
+import VideosContext from '../../providers/VideoProvider/VideoContext';
 
 function VideoDetails() {
   const { videoId } = useParams();

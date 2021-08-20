@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router';
 import { fireEvent, queryByTestId, render, waitFor } from '@testing-library/react';
 
 import Search from './index';
-import VideosProvider from '../../providers/VideosProvider';
+import VideosProvider from '../../providers/VideoProvider';
 import { youtubeClient } from '../../utils/helpers';
 import videos from '../../mocks/videos.json';
 

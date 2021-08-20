@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { Heading } from '../../theme/components/Foundation.component';
 import { BodyContainer } from './Home.styles';
 import PreviewList from '../../components/PreviewList';
-import VideosContext from '../../providers/VideosProvider/VideosContext';
+import VideosContext from '../../providers/VideoProvider/VideoContext';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 
 export const fetchVideosEffect = ({ videos, fetchVideos, input }) => () => {
