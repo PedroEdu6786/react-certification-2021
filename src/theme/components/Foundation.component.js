@@ -75,7 +75,7 @@ export const Container = styled(Grid)`
 `;
 
 export const BodyContainer = styled(Container)`
-  height: 100vh;
+  height: 200%;
   justify-content: center;
 
   @media only screen and (min-width: 1024px) {

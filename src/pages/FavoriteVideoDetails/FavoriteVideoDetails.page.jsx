@@ -1,40 +1,50 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useParams } from 'react-router';
 import PreviewRelatedList from '../../components/PreviewRelatedList';
 
 import VideoContext from '../../providers/VideoProvider/VideoContext';
 import VideoDetailsContent from '../../components/VideoDetailsContent/VideoDetailsContent.component';
-import {
-  addFavoriteVideo,
-  setFavoriteVideosAction,
-} from '../../providers/VideoProvider/VideoProvider.actions';
 import { BodyContainer } from '../../theme/components/Foundation.component';
+import {
+  findVideoById,
+  addFavoriteVideo,
+  removeFavoriteVideo,
+} from '../../utils/helpers/videoHelpers';
 
 function VideoDetails() {
+  const [playingVideo, setPlayingVideo] = useState(null);
   const { videoId } = useParams();
   const { globalState, globalDispatch } = useContext(VideoContext);
 
   const { favoriteVideos } = globalState;
 
   // re renders component when either favoriteVideos or page updates
-  useEffect(() => {}, [videoId, favoriteVideos]);
+  useEffect(() => {
+    // finds video page details for videoId parameter
+    const videoData = favoriteVideos && findVideoById(favoriteVideos, videoId);
+    if (!playingVideo) setPlayingVideo(videoData);
 
-  // finds video page details for videoId parameter
-  const videoData =
-    favoriteVideos && favoriteVideos.find((video) => video.id.videoId === videoId);
+    // eslint-disable-next-line
+  }, [favoriteVideos, playingVideo]);
 
-  const handleFavoriteVideo = () => {
-    const data = addFavoriteVideo(videoData);
-    globalDispatch(setFavoriteVideosAction(data));
-  };
+  useEffect(() => {
+    // finds video page details for videoId parameter
+    const videoData = favoriteVideos && findVideoById(favoriteVideos, videoId);
+    setPlayingVideo(videoData);
+    // eslint-disable-next-line
+  }, [videoId]);
+
+  const isFavoriteVideo = favoriteVideos && findVideoById(favoriteVideos, videoId);
 
   return (
     <BodyContainer>
       <VideoDetailsContent
         videoId={videoId}
-        videoData={videoData}
+        videoData={playingVideo}
         isAuthenticated
-        handleFavoriteVideo={handleFavoriteVideo}
+        isFavoriteVideo={isFavoriteVideo}
+        addFavoriteVideo={() => addFavoriteVideo(playingVideo, globalDispatch)}
+        removeFavoriteVideo={() => removeFavoriteVideo(videoId, globalDispatch)}
       />
       {favoriteVideos && (
         <PreviewRelatedList videos={favoriteVideos} path="/favorites/" />

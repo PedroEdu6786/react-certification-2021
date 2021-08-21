@@ -5,29 +5,28 @@ import PreviewRelatedList from '../../components/PreviewRelatedList';
 
 import VideosContext from '../../providers/VideoProvider/VideoContext';
 import VideoDetailsContent from '../../components/VideoDetailsContent/VideoDetailsContent.component';
-import {
-  addFavoriteVideo,
-  setFavoriteVideosAction,
-} from '../../providers/VideoProvider/VideoProvider.actions';
+
 import { BodyContainer } from '../../theme/components/Foundation.component';
+import {
+  findVideoById,
+  addFavoriteVideo,
+  removeFavoriteVideo,
+} from '../../utils/helpers/videoHelpers';
 
 function VideoDetails() {
   const { videoId } = useParams();
   const { isAuthenticated } = useAuth0();
   const { globalState, globalDispatch } = useContext(VideosContext);
 
-  const { videos } = globalState;
+  const { videos, favoriteVideos } = globalState;
 
   // re renders component when either videos or page updates
   useEffect(() => {}, [videoId, videos]);
 
   // finds video page details for videoId parameter
-  const videoData = videos && videos.items.find((video) => video.id.videoId === videoId);
+  const videoData = videos && findVideoById(videos.items, videoId);
 
-  const handleFavoriteVideo = () => {
-    const data = addFavoriteVideo(videoData);
-    globalDispatch(setFavoriteVideosAction(data));
-  };
+  const isFavoriteVideo = favoriteVideos && findVideoById(favoriteVideos, videoId);
 
   return (
     <BodyContainer>
@@ -35,7 +34,9 @@ function VideoDetails() {
         videoId={videoId}
         videoData={videoData}
         isAuthenticated={isAuthenticated}
-        handleFavoriteVideo={handleFavoriteVideo}
+        isFavoriteVideo={isFavoriteVideo}
+        addFavoriteVideo={() => addFavoriteVideo(videoData, globalDispatch)}
+        removeFavoriteVideo={() => removeFavoriteVideo(videoId, globalDispatch)}
       />
       {videos && <PreviewRelatedList videos={videos.items} path="/" />}
     </BodyContainer>
