@@ -11,9 +11,10 @@ import {
 
 function VideoPreview({ title, description, thumbnail, url }) {
   const { medium: image } = thumbnail || { medium: { url: '' } };
+
   return (
     <VideoPreviewContainer>
-      <VideoLink to={`/${url}`}>
+      <VideoLink to={url}>
         {/* Image Container */}
         <ThumbnailContainer>
           <Thumbnail src={image.url} />
@@ -28,5 +29,9 @@ function VideoPreview({ title, description, thumbnail, url }) {
     </VideoPreviewContainer>
   );
 }
+
+VideoPreview.defaultProps = {
+  url: '/',
+};
 
 export default VideoPreview;

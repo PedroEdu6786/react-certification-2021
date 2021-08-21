@@ -2,26 +2,27 @@ import React from 'react';
 import VideoPreview from '../VideoPreview';
 import { PreviewsContainer } from './PreviewList.styles';
 
-export const renderVideoItem = (video) => (
+export const renderVideoItem = (video, path) => (
   <VideoPreview
     key={`${video.id.videoId}${video.snippet.channelId}`}
     title={video.snippet.title}
     description={video.snippet.description}
     thumbnail={video.snippet.thumbnails}
-    url={video.id.videoId}
+    url={`${path}${video.id.videoId}`}
   />
 );
 
-function PreviewList({ videos }) {
+function PreviewList({ videos, path }) {
   return (
     <PreviewsContainer data-testid="previewList" id="previewList">
-      {videos.items.map(renderVideoItem)}
+      {videos.map((video) => renderVideoItem(video, path))}
     </PreviewsContainer>
   );
 }
 
 PreviewList.defaultProps = {
-  videos: { items: [] },
+  videos: [],
+  path: '/',
 };
 
 export default PreviewList;

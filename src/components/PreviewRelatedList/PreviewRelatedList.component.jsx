@@ -6,10 +6,13 @@ import {
   RelatedVideoContainer,
 } from './PreviewRelatedList.styles';
 
-export const renderRelatedVideos = (video) => {
+export const renderRelatedVideos = (video, path) => {
   const { snippet, id } = video;
+
+  const url = `${path}${video.id.videoId}`;
+
   return (
-    <RelatedLink to={`/${id.videoId}`} key={`${snippet.channelId}${id.videoId}`}>
+    <RelatedLink to={url} key={`${snippet.channelId}${id.videoId}`}>
       <RelatedVideoContainer>
         <Image src={snippet.thumbnails.medium.url} w="100px" h="80px" />
         <Text fontSize=".9rem" fontWeight="bold">
@@ -20,12 +23,16 @@ export const renderRelatedVideos = (video) => {
   );
 };
 
-function PreviewRelatedList({ videos }) {
-  return <PreviewContainer>{videos.items.map(renderRelatedVideos)}</PreviewContainer>;
+function PreviewRelatedList({ videos, path }) {
+  return (
+    <PreviewContainer>
+      {videos.map((video) => renderRelatedVideos(video, path))}
+    </PreviewContainer>
+  );
 }
 
 PreviewRelatedList.defaultProps = {
-  videos: { items: [] },
+  videos: [],
 };
 
 export default PreviewRelatedList;

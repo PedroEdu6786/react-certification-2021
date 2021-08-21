@@ -23,7 +23,7 @@ function HomePage() {
       {/* Main Title */}
       <Heading fontSize="2.441rem">Welcome to the challenge!</Heading>
       {/* Video List */}
-      {videos && <PreviewList videos={videos} />}
+      {videos && <PreviewList videos={videos.items} path="/" />}
       {/* Error when data fetching */}
       {error && <Heading>There was an error</Heading>}
     </BodyContainer>
