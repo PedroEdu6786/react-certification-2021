@@ -73,6 +73,18 @@ export const Container = styled(Grid)`
   }
 `;
 
+export const GhostButton = styled(Button)`
+  font-weight: bold;
+  color: ${(props) => props.theme.font};
+
+  padding: 1rem;
+  border-radius: 5px;
+  transition: 0.3s;
+  :hover,
+  :active {
+    background-color: ${(props) => props.theme.shadow};
+  }
+`;
 Stack.defaultProps = {
   direction: 'column',
 };

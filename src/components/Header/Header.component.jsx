@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+import { useAuth0 } from '@auth0/auth0-react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 import {
   Burger,
@@ -16,8 +16,10 @@ import {
 import Search from '../Search';
 import ThemeContext from '../../providers/ThemeContentProvider/ThemeContext';
 import { setThemeAction } from '../../providers/ThemeContentProvider/ThemeContextProvider.actions';
+import { GhostButton } from '../../theme/components/Foundation.component';
 
 function Header() {
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const [openDrawer, setOpenDrawer] = useState(false);
   const { globalState, globalDispatch } = useContext(ThemeContext);
 
@@ -67,7 +69,13 @@ function Header() {
               <FiSun data-testid="darkTheme" size="2.5rem" color="#BDBDBD" />
             )}
           </ThemeButton>
-          <FaUserCircle size="2.5rem" color="#BDBDBD" />
+          {isAuthenticated ? (
+            <GhostButton onClick={() => logout({ returnTo: window.location.origin })}>
+              Logout
+            </GhostButton>
+          ) : (
+            <GhostButton onClick={loginWithRedirect}>Login</GhostButton>
+          )}
         </RightNav>
       </Navigation>
     </HeaderContainer>
