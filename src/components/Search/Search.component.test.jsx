@@ -4,7 +4,7 @@ import { fireEvent, queryByTestId, render, waitFor } from '@testing-library/reac
 
 import Search from './index';
 import VideosProvider from '../../providers/VideoProvider';
-import { youtubeClient } from '../../utils/helpers';
+import { youtubeClient } from '../../utils/helpers/youtubeHelpers';
 import videos from '../../mocks/videos.json';
 
 const build = () => {

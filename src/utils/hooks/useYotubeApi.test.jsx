@@ -2,7 +2,7 @@ import { cleanup } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import useYoutubeApi from './useYoutubeApi';
 import VideosProvider from '../../providers/VideoProvider';
-import { youtubeClient } from '../helpers';
+import { youtubeClient } from '../helpers/youtubeHelpers';
 
 const build = () => {
   // eslint-disable-next-line
