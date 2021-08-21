@@ -5,6 +5,8 @@ import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails';
 import Layout from '../Layout';
 import ThemeContentProvider from '../../providers/ThemeContentProvider';
+import FavoriteVideos from '../../pages/FavoriteVideos';
+import PrivateRoute from '../PrivateRoute/PrivateRoute.component';
 
 function App() {
   return (
@@ -12,11 +14,14 @@ function App() {
       <ThemeContentProvider>
         <Layout>
           <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
+            <PrivateRoute path="/favorites">
+              <FavoriteVideos />
+            </PrivateRoute>
             <Route path="/:videoId">
               <VideoDetails />
+            </Route>
+            <Route exact path="/">
+              <HomePage />
             </Route>
           </Switch>
         </Layout>

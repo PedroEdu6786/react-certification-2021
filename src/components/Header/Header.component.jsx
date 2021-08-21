@@ -46,6 +46,11 @@ function Header() {
           <DrawerItem to="/" onClick={toggleMenu}>
             Home
           </DrawerItem>
+          {isAuthenticated && (
+            <DrawerItem to="/favorites" onClick={toggleMenu}>
+              Favorites
+            </DrawerItem>
+          )}
         </Drawer>
 
         {/* Page overlay */}
