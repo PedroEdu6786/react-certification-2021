@@ -85,6 +85,10 @@ export const GhostButton = styled(Button)`
     background-color: ${(props) => props.theme.shadow};
   }
 `;
+
+export const OutlineButton = styled(GhostButton)`
+  border: 2px solid ${(props) => props.theme.shadow};
+`;
 Stack.defaultProps = {
   direction: 'column',
 };
