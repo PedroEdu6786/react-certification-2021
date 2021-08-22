@@ -32,7 +32,7 @@ const addFavoriteTest = () => {
   videos.items.forEach((video) => addFavoriteVideo(video, globalDispatch));
 };
 
-describe('Video details page', () => {
+describe('Favorite videos page', () => {
   afterEach(cleanup);
 
   it('renders', () => {

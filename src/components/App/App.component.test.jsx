@@ -21,7 +21,7 @@ const build = () => {
   };
 };
 
-describe('Header testing', () => {
+describe('App component test', () => {
   it('renders', async () => {
     await act(async () => {
       await build();
