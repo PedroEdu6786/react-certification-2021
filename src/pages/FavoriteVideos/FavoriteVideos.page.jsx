@@ -4,6 +4,8 @@ import { Container, Text } from '../../theme/components/Foundation.component';
 import { EmptyVideos } from './FavoriteVideos.styles';
 import VideoContext from '../../providers/VideoProvider/VideoContext';
 import { setFavoriteVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
+import { getFromLocalStorage } from '../../utils/helpers/localStorage.helpers';
+import { REACT_CHALLENGE_FAVORITE_VIDEOS } from '../../utils/constants';
 
 function FavoriteVideos() {
   const { globalState, globalDispatch } = useContext(VideoContext);
@@ -11,8 +13,7 @@ function FavoriteVideos() {
   const { favoriteVideos } = globalState;
 
   useEffect(() => {
-    let favoriteList = localStorage.getItem('REACT-CHALLENGE-FAVORITE-VIDEOS') || null;
-    favoriteList = JSON.parse(favoriteList);
+    const favoriteList = getFromLocalStorage(REACT_CHALLENGE_FAVORITE_VIDEOS);
     if (favoriteList) globalDispatch(setFavoriteVideosAction(favoriteList));
     // eslint-disable-next-line
   }, []);
