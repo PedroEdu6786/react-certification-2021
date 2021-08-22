@@ -5,11 +5,13 @@ import PreviewList from '../../components/PreviewList';
 import VideosContext from '../../providers/VideoProvider/VideoContext';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 import { setFavoriteVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
+import { getFromLocalStorage } from '../../utils/helpers/localStorage.helpers';
+import { REACT_CHALLENGE_FAVORITE_VIDEOS } from '../../utils/constants';
 
 export const handleEffect = ({ videos, fetchVideos, input, globalDispatch }) => () => {
   if (!videos) fetchVideos(input);
-  let favoriteList = localStorage.getItem('REACT-CHALLENGE-FAVORITE-VIDEOS') || null;
-  favoriteList = JSON.parse(favoriteList);
+
+  const favoriteList = getFromLocalStorage(REACT_CHALLENGE_FAVORITE_VIDEOS);
   if (favoriteList) globalDispatch(setFavoriteVideosAction(favoriteList));
 };
 
