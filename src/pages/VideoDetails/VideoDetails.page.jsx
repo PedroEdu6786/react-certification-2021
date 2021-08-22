@@ -11,7 +11,7 @@ import {
   findVideoById,
   addFavoriteVideo,
   removeFavoriteVideo,
-} from '../../utils/helpers/videoHelpers';
+} from '../../utils/helpers/video.helpers';
 
 function VideoDetails() {
   const { videoId } = useParams();

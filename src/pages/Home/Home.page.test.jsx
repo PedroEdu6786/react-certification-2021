@@ -12,7 +12,7 @@ import { MemoryRouter } from 'react-router';
 
 import HomePage from './index';
 import VideosProvider from '../../providers/VideoProvider';
-import { youtubeClient } from '../../utils/helpers/youtubeHelpers';
+import { youtubeClient } from '../../utils/helpers/youtube.helpers';
 import videos from '../../mocks/videos.json';
 
 const build = () => {
