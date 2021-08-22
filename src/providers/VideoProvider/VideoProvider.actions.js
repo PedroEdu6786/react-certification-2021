@@ -20,10 +20,3 @@ export const setFavoriteVideosAction = (value) => {
     payload: value,
   };
 };
-
-export const removeFavoriteVideosAction = (value) => {
-  return {
-    type: SET_FAVORITE_VIDEOS,
-    payload: value,
-  };
-};

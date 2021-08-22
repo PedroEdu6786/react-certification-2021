@@ -1,7 +1,4 @@
-import {
-  removeFavoriteVideosAction,
-  setFavoriteVideosAction,
-} from '../../providers/VideoProvider/VideoProvider.actions';
+import { setFavoriteVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
 import { REACT_CHALLENGE_FAVORITE_VIDEOS } from '../constants';
 import { addToLocalStorage, getFromLocalStorage } from './localStorage.helpers';
 
@@ -32,7 +29,7 @@ export const removeFavoriteVideo = (videoId, globalDispatch) => {
   const updatedList = data.filter((video) => video.id.videoId !== videoId);
   addToLocalStorage(updatedList, REACT_CHALLENGE_FAVORITE_VIDEOS);
 
-  globalDispatch(removeFavoriteVideosAction(updatedList));
+  globalDispatch(setFavoriteVideosAction(updatedList));
 };
 
 /* 

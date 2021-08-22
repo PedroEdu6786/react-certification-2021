@@ -1,9 +1,4 @@
-import {
-  SET_FAVORITE_VIDEOS,
-  SET_INPUT,
-  SET_VIDEOS,
-  REMOVE_FAVORITE_VIDEO,
-} from './VideoProvider.types';
+import { SET_FAVORITE_VIDEOS, SET_INPUT, SET_VIDEOS } from './VideoProvider.types';
 
 // default state for useContext
 export const defaultState = { input: 'wizeline', videos: null, favoriteVideos: null };
@@ -28,11 +23,6 @@ export const videosReducer = (state = defaultState, action) => {
         favoriteVideos: action.payload,
       };
 
-    case REMOVE_FAVORITE_VIDEO:
-      return {
-        ...state,
-        favoriteVideos: action.payload,
-      };
     default: {
       return state;
     }
