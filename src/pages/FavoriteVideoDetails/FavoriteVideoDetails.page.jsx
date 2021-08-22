@@ -10,6 +10,9 @@ import {
   addFavoriteVideo,
   removeFavoriteVideo,
 } from '../../utils/helpers/video.helpers';
+import { getFromLocalStorage } from '../../utils/helpers/localStorage.helpers';
+import { setFavoriteVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
+import { REACT_CHALLENGE_FAVORITE_VIDEOS } from '../../utils/constants';
 
 function VideoDetails() {
   const [playingVideo, setPlayingVideo] = useState(null);
@@ -18,21 +21,25 @@ function VideoDetails() {
 
   const { favoriteVideos } = globalState;
 
-  // re renders component when either favoriteVideos or page updates
+  // re renders component when the video has been changed for preview list video
   useEffect(() => {
-    // finds video page details for videoId parameter
+    const videoData = favoriteVideos && findVideoById(favoriteVideos, videoId);
+    setPlayingVideo(videoData);
+
+    const favoriteList = getFromLocalStorage(REACT_CHALLENGE_FAVORITE_VIDEOS);
+    if (!favoriteVideos) globalDispatch(setFavoriteVideosAction(favoriteList));
+
+    // eslint-disable-next-line
+  }, [videoId]);
+
+  // re renders component when either favoriteVideos or page updates
+  // finds video page details for videoId parameter
+  useEffect(() => {
     const videoData = favoriteVideos && findVideoById(favoriteVideos, videoId);
     if (!playingVideo) setPlayingVideo(videoData);
 
     // eslint-disable-next-line
   }, [favoriteVideos, playingVideo]);
-
-  useEffect(() => {
-    // finds video page details for videoId parameter
-    const videoData = favoriteVideos && findVideoById(favoriteVideos, videoId);
-    setPlayingVideo(videoData);
-    // eslint-disable-next-line
-  }, [videoId]);
 
   const isFavoriteVideo = favoriteVideos && findVideoById(favoriteVideos, videoId);
 
