@@ -7,6 +7,8 @@ export const EmptyVideos = styled(Stack)`
   border-radius: 5px;
   color: #e63946;
   padding: 1rem;
+  height: 4rem;
+  justify-content: center;
 
   * {
     color: #e63946;
