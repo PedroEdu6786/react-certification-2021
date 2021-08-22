@@ -13,7 +13,7 @@ function VideoPreview({ title, description, thumbnail, url }) {
   const { medium: image } = thumbnail || { medium: { url: '' } };
 
   return (
-    <VideoPreviewContainer>
+    <VideoPreviewContainer as="article">
       <VideoLink to={url}>
         {/* Image Container */}
         <ThumbnailContainer>

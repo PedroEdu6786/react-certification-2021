@@ -3,6 +3,9 @@ import { fireEvent, queryByRole, render } from '@testing-library/react';
 
 import videos from '../../mocks/videos.json';
 import VideoDetailsContent from './VideoDetailsContent.component';
+import { addFavoriteVideo, removeFavoriteVideo } from '../../utils/helpers/video.helpers';
+import { getFromLocalStorage } from '../../utils/helpers/localStorage.helpers';
+import { REACT_CHALLENGE_FAVORITE_VIDEOS } from '../../utils/constants';
 
 const build = ({ ...rest }) => {
   const { container } = render(<VideoDetailsContent {...rest} />);
@@ -19,7 +22,9 @@ const build = ({ ...rest }) => {
 };
 
 describe('VideoDetails content component', () => {
-  const videoData = videos.items[0];
+  const videoData = videos.items[1];
+  const globalDispatch = jest.fn();
+
   it('renders', () => {
     build(videoData);
   });
@@ -37,31 +42,29 @@ describe('VideoDetails content component', () => {
   });
 
   it('adds a video to favorites', () => {
-    const addFavoriteVideo = jest.fn();
-
     const { addFavoriteButton } = build({
       videoData,
       isAuthenticated: true,
-      addFavoriteVideo,
+      isFavoriteVideo: false,
+      addFavoriteVideo: () => addFavoriteVideo(videoData, globalDispatch),
     });
 
     fireEvent.click(addFavoriteButton());
-
-    expect(addFavoriteVideo).toBeCalledTimes(1);
+    const video = getFromLocalStorage(REACT_CHALLENGE_FAVORITE_VIDEOS);
+    expect(video[0]).toEqual(videoData);
   });
 
   it('removes a video from favorites', () => {
-    const removeFavoriteVideo = jest.fn();
-
     const { removeFavoriteButton } = build({
       videoData,
       isAuthenticated: true,
       isFavoriteVideo: true,
-      removeFavoriteVideo,
+      removeFavoriteVideo: () =>
+        removeFavoriteVideo(videoData.id.videoId, globalDispatch),
     });
 
     fireEvent.click(removeFavoriteButton());
-
-    expect(removeFavoriteVideo).toBeCalledTimes(1);
+    const video = getFromLocalStorage(REACT_CHALLENGE_FAVORITE_VIDEOS);
+    expect(video.length).toEqual(0);
   });
 });
