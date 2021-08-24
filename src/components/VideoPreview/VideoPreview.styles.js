@@ -10,8 +10,13 @@ export const VideoLink = styled(Link)`
 export const VideoPreviewContainer = styled(Stack)`
   background-color: ${(props) => props.theme.cardBackground};
 
+  overflow: hidden;
   max-width: 345px;
-  height: 400px;
+
+  height: 450px;
+  @media only screen and (min-width: 768px) {
+    height: 400px;
+  }
   border-radius: 10px;
   -webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);
   box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);

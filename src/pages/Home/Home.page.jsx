@@ -22,7 +22,11 @@ function HomePage() {
   const { input, videos } = globalState;
 
   // eslint-disable-next-line
-  useEffect(handleEffect({ videos, fetchVideos, input, globalDispatch }), [videos]);
+  useEffect(handleEffect({ videos, fetchVideos, input, globalDispatch }), [
+    videos,
+    input,
+    globalDispatch,
+  ]);
 
   return (
     <BodyContainer as="section">
