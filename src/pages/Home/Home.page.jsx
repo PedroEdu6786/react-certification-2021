@@ -1,38 +1,32 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { Heading } from '../../theme/components/Foundation.component';
+import { BodyContainer } from './Home.styles';
+import PreviewList from '../../components/PreviewList';
+import VideosContext from '../../providers/VideoProvider/VideoContext';
+import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+export const fetchVideosEffect = ({ videos, fetchVideos, input }) => () => {
+  if (!videos) fetchVideos(input);
+};
 
 function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
+  const { error, fetchVideos } = useYoutubeApi();
+  const { globalState } = useContext(VideosContext);
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
-  }
+  const { input, videos } = globalState;
+
+  // eslint-disable-next-line
+  useEffect(fetchVideosEffect({ videos, fetchVideos, input }), [videos]);
 
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
+    <BodyContainer as="section">
+      {/* Main Title */}
+      <Heading fontSize="2.441rem">Welcome to the challenge!</Heading>
+      {/* Video List */}
+      {videos && <PreviewList videos={videos} />}
+      {/* Error when data fetching */}
+      {error && <Heading>There was an error</Heading>}
+    </BodyContainer>
   );
 }
 

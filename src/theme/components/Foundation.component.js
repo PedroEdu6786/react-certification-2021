@@ -1,0 +1,78 @@
+import styled from 'styled-components';
+import { defaultStyles, textDefaultStyles } from '../foundations/defaultStyles';
+
+export const Box = styled.div`
+  ${defaultStyles}
+`;
+
+export const Button = styled.button`
+  ${defaultStyles};
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+`;
+
+export const Input = styled.input`
+  ${defaultStyles};
+  ${defaultStyles};
+  background-color: ${(props) => props.theme.background};
+  border: 2px solid #cdcdcd;
+  border-radius: 0.25rem;
+  font-family: 'Montserrat', sans-serif;
+`;
+
+export const Heading = styled.h1`
+  ${defaultStyles};
+  ${textDefaultStyles};
+  color: ${(props) => props.theme.font};
+`;
+
+export const Text = styled.p`
+  ${defaultStyles};
+  ${textDefaultStyles};
+  color: ${(props) => props.theme.font};
+`;
+
+export const Stack = styled(Box)`
+  display: flex;
+  flex-direction: ${(props) => props.direction};
+  justify-content: ${(props) => props.justify};
+  align-items: ${(props) => props.align};
+`;
+
+export const Grid = styled(Box)`
+  display: grid;
+  gap: ${(props) => props.gap};
+  justify-content: ${(props) => props.justify};
+  align-items: ${(props) => props.align};
+`;
+
+export const Link = styled.a`
+  ${defaultStyles};
+  ${textDefaultStyles};
+  text-decoration: none;
+  color: ${(props) => props.theme.font};
+`;
+
+export const Image = styled.img`
+  ${defaultStyles};
+  object-fit: ${(props) => props.objectFit};
+`;
+
+export const Container = styled(Grid)`
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  background-color: ${(props) => props.theme.background};
+
+  @media only screen and (min-width: 768px) {
+    padding: 2rem 3rem;
+  }
+`;
+
+Stack.defaultProps = {
+  direction: 'column',
+};

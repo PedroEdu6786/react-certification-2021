@@ -1,3 +1,2 @@
-const AUTH_STORAGE_KEY = 'wa_cert_authenticated';
-
-export { AUTH_STORAGE_KEY };
+// testing and fetching max rate limit
+export const YOUTUBE_MAX_RESULTS = 25;
