@@ -34,8 +34,8 @@ describe('Search component', () => {
     youtubeClient.mockImplementationOnce(() => Promise.resolve({ data: videos }));
     const { input } = build();
 
+    fireEvent.submit(input());
     await waitFor(() => {
-      fireEvent.submit(input());
       expect(youtubeClient).toBeCalledTimes(1);
     });
   });
