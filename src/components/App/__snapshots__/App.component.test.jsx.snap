@@ -6,16 +6,16 @@ exports[`App component test navigates to video details screen 1`] = `
     class="sc-bdnxRM flyXsy"
   >
     <header
-      class="sc-bdnxRM sc-jSFjdj sc-crzoAE flyXsy fkwVUy ZaLre"
+      class="sc-bdnxRM sc-jSFjdj sc-dIsUp flyXsy fkwVUy dAFVrV"
       data-testid="header"
       direction="column"
     >
       <div
-        class="sc-bdnxRM sc-jSFjdj sc-dIsUp flyXsy fkwVUy fMXYSw"
+        class="sc-bdnxRM sc-jSFjdj sc-bqGGPW flyXsy fkwVUy kbcoRT"
         direction="column"
       >
         <nav
-          class="sc-bdnxRM sc-jSFjdj sc-ksluID flyXsy fkwVUy eOCFBL"
+          class="sc-bdnxRM sc-jSFjdj sc-hBMUJo flyXsy fkwVUy iUgRzM"
           direction="column"
         >
           <a
@@ -26,7 +26,7 @@ exports[`App component test navigates to video details screen 1`] = `
           </a>
         </nav>
         <div
-          class="sc-bdnxRM sc-hBMUJo flyXsy fjglmB"
+          class="sc-bdnxRM sc-crzoAE flyXsy rndSS"
           data-testid="overlay"
         />
         <div
@@ -34,7 +34,7 @@ exports[`App component test navigates to video details screen 1`] = `
           direction="column"
         >
           <button
-            class="sc-bdnxRM sc-bqGGPW flyXsy ebSmms"
+            class="sc-bdnxRM sc-ksluID flyXsy fYPbzw"
           >
             <svg
               class="sc-dIvrsQ kZNHRm"

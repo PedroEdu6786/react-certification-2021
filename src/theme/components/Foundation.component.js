@@ -99,6 +99,20 @@ export const GhostButton = styled(Button)`
 export const OutlineButton = styled(GhostButton)`
   border: 2px solid ${(props) => props.theme.shadow};
 `;
+
+export const Overlay = styled(Box)`
+  background-color: rgba(84, 84, 84, 0.4);
+  display: ${(props) => (props.show ? 'block' : 'none')};
+  height: 200vh;
+  left: 0;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  width: 150vw;
+  z-index: 1;
+  transition: 0.4s;
+`;
+
 Stack.defaultProps = {
   direction: 'column',
 };

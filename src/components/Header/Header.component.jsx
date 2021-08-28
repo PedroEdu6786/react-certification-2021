@@ -9,17 +9,16 @@ import {
   HeaderContainer,
   LeftNav,
   Navigation,
-  Overlay,
   RightNav,
   ThemeButton,
 } from './Header.styles';
 import Search from '../Search';
 import ThemeContext from '../../providers/ThemeContentProvider/ThemeContext';
 import { setThemeAction } from '../../providers/ThemeContentProvider/ThemeContextProvider.actions';
-import { GhostButton } from '../../theme/components/Foundation.component';
+import { GhostButton, Overlay } from '../../theme/components/Foundation.component';
 
 function Header() {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithPopup, logout } = useAuth0();
   const [openDrawer, setOpenDrawer] = useState(false);
   const { globalState, globalDispatch } = useContext(ThemeContext);
 
@@ -36,6 +35,10 @@ function Header() {
 
   const toggleMenu = () => {
     setOpenDrawer((prevState) => !prevState);
+  };
+
+  const handleLogin = async () => {
+    await loginWithPopup();
   };
 
   return (
@@ -79,7 +82,7 @@ function Header() {
               Logout
             </GhostButton>
           ) : (
-            <GhostButton onClick={loginWithRedirect}>Login</GhostButton>
+            <GhostButton onClick={handleLogin}>Login</GhostButton>
           )}
         </RightNav>
       </Navigation>
