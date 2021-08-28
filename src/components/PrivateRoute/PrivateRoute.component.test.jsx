@@ -18,6 +18,7 @@ const build = () => {
   return {
     container,
     heading: () => queryByText(container, /Test/i),
+    loading: () => queryByText(container, /Loading.../i),
   };
 };
 
@@ -32,5 +33,11 @@ describe('Private route component', () => {
     useAuth0.mockImplementationOnce(() => ({ isAuthenticated: true }));
     const { heading } = build();
     expect(heading()).toBeInTheDocument();
+  });
+
+  it('should display loading when waiting for authentication', () => {
+    useAuth0.mockImplementationOnce(() => ({ isLoading: true }));
+    const { loading } = build();
+    expect(loading()).toBeInTheDocument();
   });
 });
