@@ -65,7 +65,7 @@ export const Image = styled.img`
 
 export const Container = styled(Grid)`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   gap: 2rem;
   padding: 2rem 2rem;
   background-color: ${(props) => props.theme.background};
