@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { BiLoaderAlt } from 'react-icons/bi';
+import styled, { keyframes } from 'styled-components';
 import { defaultStyles, textDefaultStyles } from '../foundations/defaultStyles';
 
 export const Box = styled.div`
@@ -111,6 +112,24 @@ export const Overlay = styled(Box)`
   width: 150vw;
   z-index: 1;
   transition: 0.4s;
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Loader = styled(BiLoaderAlt)`
+  justify-self: center;
+  align-self: center;
+  font-size: 5rem;
+  animation-name: spin;
+  animation: ${rotate} 900ms linear infinite;
 `;
 
 Stack.defaultProps = {

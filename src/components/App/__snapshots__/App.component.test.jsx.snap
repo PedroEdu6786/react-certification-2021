@@ -6,20 +6,20 @@ exports[`App component test navigates to video details screen 1`] = `
     class="sc-bdnxRM flyXsy"
   >
     <header
-      class="sc-bdnxRM sc-jSFjdj sc-dIsUp flyXsy fkwVUy dAFVrV"
+      class="sc-bdnxRM sc-jSFjdj sc-bqGGPW flyXsy fkwVUy boVZVa"
       data-testid="header"
       direction="column"
     >
       <div
-        class="sc-bdnxRM sc-jSFjdj sc-bqGGPW flyXsy fkwVUy kbcoRT"
+        class="sc-bdnxRM sc-jSFjdj sc-ksluID flyXsy fkwVUy kVFeir"
         direction="column"
       >
         <nav
-          class="sc-bdnxRM sc-jSFjdj sc-hBMUJo flyXsy fkwVUy iUgRzM"
+          class="sc-bdnxRM sc-jSFjdj sc-fnVZcZ flyXsy fkwVUy diyWTC"
           direction="column"
         >
           <a
-            class="sc-iemWCZ gtMcKg"
+            class="sc-dIvrsQ HntkA"
             href="/"
           >
             Home
@@ -30,14 +30,14 @@ exports[`App component test navigates to video details screen 1`] = `
           data-testid="overlay"
         />
         <div
-          class="sc-bdnxRM sc-jSFjdj sc-fnVZcZ flyXsy fkwVUy jxnxQS"
+          class="sc-bdnxRM sc-jSFjdj sc-fFSPTT flyXsy fkwVUy dRNtOQ"
           direction="column"
         >
           <button
-            class="sc-bdnxRM sc-ksluID flyXsy fYPbzw"
+            class="sc-bdnxRM sc-hBMUJo flyXsy KmlLn"
           >
             <svg
-              class="sc-dIvrsQ kZNHRm"
+              class="sc-hHEiqL hdsgLE"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -52,7 +52,7 @@ exports[`App component test navigates to video details screen 1`] = `
             </svg>
           </button>
           <form
-            class="sc-bdnxRM sc-jSFjdj sc-dlMDgC flyXsy fkwVUy iwpgqZ"
+            class="sc-bdnxRM sc-jSFjdj sc-kfYoZR flyXsy fkwVUy exxNVj"
             direction="column"
           >
             <div
@@ -77,17 +77,17 @@ exports[`App component test navigates to video details screen 1`] = `
               </svg>
             </div>
             <input
-              class="sc-dlnjwi sc-hHEiqL inzMHh dVsAGq"
+              class="sc-dlnjwi sc-dlMDgC inzMHh KXUTG"
               value="wizeline"
             />
           </form>
         </div>
         <div
-          class="sc-bdnxRM sc-jSFjdj sc-fFSPTT flyXsy fkwVUy cZbFsj"
+          class="sc-bdnxRM sc-jSFjdj sc-bkbkJK flyXsy fkwVUy dytoCt"
           direction="column"
         >
           <button
-            class="sc-gtsrHT sc-bkbkJK kViayw"
+            class="sc-gtsrHT sc-iemWCZ kViayw"
             data-testid="themeButton"
           >
             <svg
@@ -121,15 +121,15 @@ exports[`App component test navigates to video details screen 1`] = `
       class="sc-bdnxRM sc-gKAaRy sc-pNWdM sc-jrsJWt flyXsy kVbCJq hKmrdS dITRRO"
     >
       <div
-        class="sc-bdnxRM sc-jSFjdj sc-hiKfDv flyXsy fkwVUy kvLUxc"
+        class="sc-bdnxRM sc-jSFjdj sc-gXfVKN flyXsy fkwVUy zKvBU"
         direction="column"
       >
         <iframe
-          class="sc-jJMGnK FDWTR"
+          class="sc-hiKfDv XqMlc"
           src="https://www.youtube.com/embed/nmXMgqjQzls"
         />
         <div
-          class="sc-bdnxRM sc-jSFjdj sc-gXfVKN flyXsy fkwVUy kbtMsR"
+          class="sc-bdnxRM sc-jSFjdj sc-cBoqAE flyXsy fkwVUy eMOKOI"
           direction="column"
         >
           <h1
@@ -146,14 +146,14 @@ exports[`App component test navigates to video details screen 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdnxRM sc-gKAaRy sc-iklJeh flyXsy kVbCJq iceGUP"
+        class="sc-bdnxRM sc-gKAaRy sc-jJMGnK flyXsy kVbCJq eVWNBB"
       >
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/undefined"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -170,11 +170,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/nmXMgqjQzls"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -191,11 +191,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/HYyRZiwBWc8"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -212,11 +212,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/Po3VwR_NNGk"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -233,11 +233,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/7PtYNO6g7eI"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -254,11 +254,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/YuW0CE_8i1I"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -275,11 +275,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/CHzlSGRvWPs"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -296,11 +296,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/cjO2fJy8asM"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -317,11 +317,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/zClI9OjgKXM"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -338,11 +338,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/8bz9R61oY5o"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -359,11 +359,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/7dJFraOqcoQ"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -380,11 +380,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/w-Qwc_XJrWc"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -401,11 +401,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/rjir_cHTl5w"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -422,11 +422,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/DcFK1x3NHGY"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -443,11 +443,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/3BzYWAqZgFw"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -464,11 +464,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/3KVFmT-Tp2w"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -485,11 +485,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/aKuPmY2m1Ro"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -506,11 +506,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/24sTHUyWhRM"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -527,11 +527,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/IxGc1gSqB3A"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -548,11 +548,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/NP1gAnbeNno"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -569,11 +569,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/F6Krwu6lUc8"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -590,11 +590,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/RFq7gfvhtCk"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -611,11 +611,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/E1Vq_A3WKK8"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -632,11 +632,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/ZmkslANDz0Q"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
@@ -653,11 +653,11 @@ exports[`App component test navigates to video details screen 1`] = `
           </div>
         </a>
         <a
-          class="sc-bYwzuL gbFdLf"
+          class="sc-kLojOw jzZDy"
           href="/Nss3EmTDD3s"
         >
           <div
-            class="sc-bdnxRM sc-jSFjdj sc-kLojOw flyXsy fkwVUy bRnREc"
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
             direction="column"
           >
             <img
