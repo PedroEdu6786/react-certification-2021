@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { MemoryRouter } from 'react-router';
-import { queryByText, render } from '@testing-library/react';
+import { queryByTestId, queryByText, render } from '@testing-library/react';
 import PrivateRoute from './PrivateRoute.component';
 import { Heading } from '../../theme/components/Foundation.component';
 
@@ -18,7 +18,7 @@ const build = () => {
   return {
     container,
     heading: () => queryByText(container, /Test/i),
-    loading: () => queryByText(container, /Loading.../i),
+    loading: () => queryByTestId(container, /loader/i),
   };
 };
 
