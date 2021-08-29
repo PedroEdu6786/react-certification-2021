@@ -7,6 +7,12 @@ import { setFavoriteVideosAction } from '../../providers/VideoProvider/VideoProv
 import { getFromLocalStorage } from '../../utils/helpers/localStorage.helpers';
 import { REACT_CHALLENGE_FAVORITE_VIDEOS } from '../../utils/constants';
 
+const isListValid = (list) => {
+  if (list == null) return false;
+  if (list.length <= 0) return false;
+  return true;
+};
+
 function FavoriteVideos() {
   const { globalState, globalDispatch } = useContext(VideoContext);
 
@@ -21,8 +27,13 @@ function FavoriteVideos() {
   return (
     <Container as="section">
       {/* Video List */}
-      {favoriteVideos ? (
-        <PreviewList videos={favoriteVideos} path="/favorites/" />
+      {isListValid(favoriteVideos) ? (
+        <PreviewList
+          videos={favoriteVideos}
+          favoriteVideos={favoriteVideos}
+          path="/favorites/"
+          isAuthenticated
+        />
       ) : (
         <EmptyVideos>
           <Text>There is no favorite videos</Text>

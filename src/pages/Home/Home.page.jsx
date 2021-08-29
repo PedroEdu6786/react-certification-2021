@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import { Heading, Loader } from '../../theme/components/Foundation.component';
 import { BodyContainer } from './Home.styles';
 import PreviewList from '../../components/PreviewList';
-import VideosContext from '../../providers/VideoProvider/VideoContext';
+import VideoContext from '../../providers/VideoProvider/VideoContext';
 import useYoutubeApi from '../../utils/hooks/useYoutubeApi';
 import { setFavoriteVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
 import { getFromLocalStorage } from '../../utils/helpers/localStorage.helpers';
@@ -21,10 +22,11 @@ export const handleEffect = ({ videos, fetchVideos, input, globalDispatch }) => 
 };
 
 function HomePage() {
+  const { isAuthenticated } = useAuth0();
   const { loading, error, fetchVideos } = useYoutubeApi();
-  const { globalState, globalDispatch } = useContext(VideosContext);
+  const { globalState, globalDispatch } = useContext(VideoContext);
 
-  const { input, videos } = globalState;
+  const { input, videos, favoriteVideos } = globalState;
 
   // eslint-disable-next-line
   useEffect(handleEffect({ videos, fetchVideos, input, globalDispatch }), [
@@ -40,7 +42,14 @@ function HomePage() {
       {/* Loading animation when data fetching */}
       {loading && <Loader />}
       {/* Video List */}
-      {videos && <PreviewList videos={videos.items} path="/" />}
+      {videos && (
+        <PreviewList
+          videos={videos.items}
+          favoriteVideos={favoriteVideos}
+          path="/"
+          isAuthenticated={isAuthenticated}
+        />
+      )}
       {/* Error when data fetching */}
       {error && <Heading>There was an error</Heading>}
     </BodyContainer>

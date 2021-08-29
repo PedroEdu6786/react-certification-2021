@@ -1,14 +1,22 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
-import { findAllByRole, queryByRole, render } from '@testing-library/react';
+import { fireEvent, queryByRole, render } from '@testing-library/react';
 
 import VideoPreview from './VideoPreview.component';
 import videos from '../../mocks/videos.json';
 
-const build = ({ buildVideos }) => {
-  const { container } = render(<VideoPreview {...buildVideos} />, {
-    wrapper: MemoryRouter,
-  });
+const build = (video, isFavoriteVideo = false, globalDispatch = null) => {
+  const { container } = render(
+    <VideoPreview
+      videoData={video}
+      isFavoriteVideo={isFavoriteVideo}
+      globalDispatch={globalDispatch}
+      isAuthenticated
+    />,
+    {
+      wrapper: MemoryRouter,
+    }
+  );
 
   return {
     container,
@@ -16,24 +24,38 @@ const build = ({ buildVideos }) => {
     /** Queries for single elements */
     title: () => queryByRole(container, 'h1', { name: 'video title' }),
     image: () => queryByRole(container, 'img', { name: 'video image' }),
-
-    /** Queries for multiple elements */
-    videosList: () => findAllByRole(container, 'link'),
+    addFavorite: () => queryByRole(container, 'button', { name: /Add to favorites/i }),
+    removeFavorite: () =>
+      queryByRole(container, 'button', { name: /Remove from favorites/i }),
+    videoCard: () => queryByRole(container, 'article'),
   };
 };
 
 describe('Video preview component', () => {
+  const video = videos.items[0];
   it('renders', () => {
-    build(videos);
+    build(video);
   });
 
   it('contains a title', () => {
-    const { title } = build(videos);
+    const { title } = build(video);
     expect(title()).toBeDefined();
   });
 
   it('contains an image', () => {
-    const { image } = build(videos);
+    const { image } = build(video);
     expect(image()).toBeDefined();
+  });
+
+  it('shows add to favorites button', () => {
+    const { videoCard, addFavorite } = build(video);
+    fireEvent.mouseEnter(videoCard());
+    expect(addFavorite()).toBeInTheDocument();
+  });
+
+  it('shows add to favorites button', () => {
+    const { videoCard, removeFavorite } = build(video, true);
+    fireEvent.mouseEnter(videoCard());
+    expect(removeFavorite()).toBeInTheDocument();
   });
 });

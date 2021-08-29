@@ -118,7 +118,7 @@ exports[`App component test navigates to video details screen 1`] = `
       </div>
     </header>
     <div
-      class="sc-bdnxRM sc-gKAaRy sc-pNWdM sc-jrsJWt flyXsy kVbCJq hKmrdS dITRRO"
+      class="sc-bdnxRM sc-gKAaRy sc-pNWdM sc-jrsJWt flyXsy kVbCJq jOkToB dITRRO"
     >
       <div
         class="sc-bdnxRM sc-jSFjdj sc-gXfVKN flyXsy fkwVUy zKvBU"
@@ -126,7 +126,7 @@ exports[`App component test navigates to video details screen 1`] = `
       >
         <iframe
           class="sc-hiKfDv XqMlc"
-          src="https://www.youtube.com/embed/nmXMgqjQzls"
+          src="https://www.youtube.com/embed/HYyRZiwBWc8"
         />
         <div
           class="sc-bdnxRM sc-jSFjdj sc-cBoqAE flyXsy fkwVUy eMOKOI"
@@ -135,40 +135,19 @@ exports[`App component test navigates to video details screen 1`] = `
           <h1
             class="sc-hKFxyN gcPkEz"
           >
-            Video Tour | Welcome to Wizeline Guadalajara
+            Wizeline Guadalajara | Bringing Silicon Valley to Mexico
           </h1>
           <p
             class="sc-eCApnc iaIVKm"
             font-size=".9rem"
           >
-            Follow Hector Padilla, Wizeline Director of Engineering, for a lively tour of our office. In 2018, Wizeline opened its stunning new office in Guadalajara, Jalisco, ...
+            Wizeline continues to offer a Silicon Valley culture in burgeoning innovation hubs like Mexico and Vietnam. In 2018, our Guadalajara team moved into a ...
           </p>
         </div>
       </div>
       <div
         class="sc-bdnxRM sc-gKAaRy sc-jJMGnK flyXsy kVbCJq eVWNBB"
       >
-        <a
-          class="sc-kLojOw jzZDy"
-          href="/undefined"
-        >
-          <div
-            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
-            direction="column"
-          >
-            <img
-              class="sc-fujyAs kyRtsq"
-              src="https://yt3.ggpht.com/ytc/AAUvwnighSReQlmHl_S_vSfvnWBAG5Cw4A0YxtE0tm5OpQ=s240-c-k-c0xffffffff-no-rj-mo"
-            />
-            <p
-              class="sc-eCApnc eGRAnL"
-              font-size=".9rem"
-              font-weight="bold"
-            >
-              Wizeline
-            </p>
-          </div>
-        </a>
         <a
           class="sc-kLojOw jzZDy"
           href="/nmXMgqjQzls"
