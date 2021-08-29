@@ -40,5 +40,6 @@ export const removeFavoriteVideo = (videoId, globalDispatch) => {
   return: void
 */
 export const findVideoById = (videos, videoId) => {
+  if (videos == null) return false;
   return videos.find((video) => video.id.videoId === videoId);
 };
