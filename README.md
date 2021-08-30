@@ -11,6 +11,7 @@
 </p>
 
 <br />
+
 ## 👋 Wizeline Academy - 2021 React Bootcamp
 
 This is a wizeline academy project for 2021 react bootcamp. The challenge consisted on creating a youtube clone with the requirements specified on the following [GIST](https://gist.github.com/villacoder/9f980254461fa8bfbe93067db2126872).
