@@ -19,6 +19,7 @@ export const PreviewContainer = styled(Grid)`
   gap: 1rem;
 
   @media only screen and (min-width: 1024px) {
-    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
   }
 `;

@@ -33,5 +33,11 @@ describe('ThemeContextProvider', () => {
 
       expect(themeReducer(undefined, testDarkAction)).toEqual(expectedState);
     });
+
+    it('should perform action: default return state ', () => {
+      const expectedState = { theme: themes.light };
+
+      expect(themeReducer(undefined, { type: 'DEFAULT' })).toEqual(expectedState);
+    });
   });
 });

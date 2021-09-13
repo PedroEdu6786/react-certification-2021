@@ -4,7 +4,7 @@ import { fireEvent, queryByTestId, render, waitFor } from '@testing-library/reac
 
 import Search from './index';
 import VideosProvider from '../../providers/VideoProvider';
-import { youtubeClient } from '../../utils/helpers/youtubeHelpers';
+import { youtubeClient } from '../../utils/helpers/youtube.helpers';
 import videos from '../../mocks/videos.json';
 
 const build = () => {
@@ -34,8 +34,8 @@ describe('Search component', () => {
     youtubeClient.mockImplementationOnce(() => Promise.resolve({ data: videos }));
     const { input } = build();
 
+    fireEvent.submit(input());
     await waitFor(() => {
-      fireEvent.submit(input());
       expect(youtubeClient).toBeCalledTimes(1);
     });
   });

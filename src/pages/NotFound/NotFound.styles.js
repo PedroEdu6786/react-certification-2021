@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Container } from '../../theme/components/Foundation.component';
 
-export const BodyContainer = styled(Container)`
+export const ErrorContainer = styled(Container)`
   justify-content: center;
-  height: 100%;
+  align-items: center;
+  height: 90vh;
 `;

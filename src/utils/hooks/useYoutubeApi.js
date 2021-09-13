@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import VideosContext from '../../providers/VideoProvider/VideoContext';
 import { setVideosAction } from '../../providers/VideoProvider/VideoProvider.actions';
 import { buildQueryParams } from '../helpers/helpers';
-import { youtubeClient } from '../helpers/youtubeHelpers';
+import { youtubeClient } from '../helpers/youtube.helpers';
 
 const useYoutubeApi = () => {
   const [data, setData] = useState(null);

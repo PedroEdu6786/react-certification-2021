@@ -1,34 +1,44 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { useAuth0 } from '@auth0/auth0-react';
 import PreviewRelatedList from '../../components/PreviewRelatedList';
-import { Heading, Text } from '../../theme/components/Foundation.component';
-import { BodyContainer, VideoContent, VideoPlayer } from './VideoDetails.styles';
+
 import VideosContext from '../../providers/VideoProvider/VideoContext';
+import VideoDetailsContent from '../../components/VideoDetailsContent/VideoDetailsContent.component';
+
+import { BodyContainer } from '../../theme/components/Foundation.component';
+import {
+  findVideoById,
+  addFavoriteVideo,
+  removeFavoriteVideo,
+} from '../../utils/helpers/video.helpers';
 
 function VideoDetails() {
   const { videoId } = useParams();
-  const { globalState } = useContext(VideosContext);
+  const { isAuthenticated } = useAuth0();
+  const { globalState, globalDispatch } = useContext(VideosContext);
 
-  const { videos } = globalState;
+  const { videos, favoriteVideos } = globalState;
 
   // re renders component when either videos or page updates
   useEffect(() => {}, [videoId, videos]);
 
   // finds video page details for videoId parameter
-  const videoData = videos && videos.items.find((video) => video.id.videoId === videoId);
+  const videoData = videos && findVideoById(videos.items, videoId);
+
+  const isFavoriteVideo = favoriteVideos && findVideoById(favoriteVideos, videoId);
 
   return (
     <BodyContainer>
-      <VideoContent>
-        <VideoPlayer src={`https://www.youtube.com/embed/${videoId}`} />
-        {videoData && (
-          <>
-            <Heading>{videoData.snippet.title}</Heading>
-            <Text fontSize=".9rem">{videoData.snippet.description}</Text>
-          </>
-        )}
-      </VideoContent>
-      {videos && <PreviewRelatedList videos={videos} />}
+      <VideoDetailsContent
+        videoId={videoId}
+        videoData={videoData}
+        isAuthenticated={isAuthenticated}
+        isFavoriteVideo={isFavoriteVideo}
+        addFavoriteVideo={() => addFavoriteVideo(videoData, globalDispatch)}
+        removeFavoriteVideo={() => removeFavoriteVideo(videoId, globalDispatch)}
+      />
+      {videos && <PreviewRelatedList videos={videos.items} path="/" />}
     </BodyContainer>
   );
 }

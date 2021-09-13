@@ -1,0 +1,659 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component test navigates to video details screen 1`] = `
+<div>
+  <main
+    class="sc-bdnxRM flyXsy"
+  >
+    <header
+      class="sc-bdnxRM sc-jSFjdj sc-bqGGPW flyXsy fkwVUy boVZVa"
+      data-testid="header"
+      direction="column"
+    >
+      <div
+        class="sc-bdnxRM sc-jSFjdj sc-ksluID flyXsy fkwVUy kVFeir"
+        direction="column"
+      >
+        <nav
+          class="sc-bdnxRM sc-jSFjdj sc-fnVZcZ flyXsy fkwVUy diyWTC"
+          direction="column"
+        >
+          <a
+            class="sc-dIvrsQ HntkA"
+            href="/"
+          >
+            Home
+          </a>
+        </nav>
+        <div
+          class="sc-bdnxRM sc-crzoAE flyXsy rndSS"
+          data-testid="overlay"
+        />
+        <div
+          class="sc-bdnxRM sc-jSFjdj sc-fFSPTT flyXsy fkwVUy dRNtOQ"
+          direction="column"
+        >
+          <button
+            class="sc-bdnxRM sc-hBMUJo flyXsy KmlLn"
+          >
+            <svg
+              class="sc-hHEiqL hdsgLE"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+              />
+            </svg>
+          </button>
+          <form
+            class="sc-bdnxRM sc-jSFjdj sc-kfYoZR flyXsy fkwVUy exxNVj"
+            direction="column"
+          >
+            <div
+              class="sc-bdnxRM fzigNa"
+            >
+              <svg
+                color="#BDBDBD"
+                data-testid="input-search"
+                fill="currentColor"
+                height="1.125rem"
+                stroke="currentColor"
+                stroke-width="0"
+                style="color: rgb(189, 189, 189);"
+                viewBox="0 0 16 16"
+                width="1.125rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              class="sc-dlnjwi sc-dlMDgC inzMHh KXUTG"
+              value="wizeline"
+            />
+          </form>
+        </div>
+        <div
+          class="sc-bdnxRM sc-jSFjdj sc-bkbkJK flyXsy fkwVUy dytoCt"
+          direction="column"
+        >
+          <button
+            class="sc-gtsrHT sc-iemWCZ kViayw"
+            data-testid="themeButton"
+          >
+            <svg
+              color="#BDBDBD"
+              data-testid="lightTheme"
+              fill="none"
+              height="2.5rem"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="color: rgb(189, 189, 189);"
+              viewBox="0 0 24 24"
+              width="2.5rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+              />
+            </svg>
+          </button>
+          <button
+            class="sc-gtsrHT sc-kEqXSa kViayw iHHQOg"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </header>
+    <div
+      class="sc-bdnxRM sc-gKAaRy sc-pNWdM sc-jrsJWt flyXsy kVbCJq jOkToB dITRRO"
+    >
+      <div
+        class="sc-bdnxRM sc-jSFjdj sc-gXfVKN flyXsy fkwVUy zKvBU"
+        direction="column"
+      >
+        <iframe
+          class="sc-hiKfDv XqMlc"
+          src="https://www.youtube.com/embed/HYyRZiwBWc8"
+        />
+        <div
+          class="sc-bdnxRM sc-jSFjdj sc-cBoqAE flyXsy fkwVUy eMOKOI"
+          direction="column"
+        >
+          <h1
+            class="sc-hKFxyN gcPkEz"
+          >
+            Wizeline Guadalajara | Bringing Silicon Valley to Mexico
+          </h1>
+          <p
+            class="sc-eCApnc iaIVKm"
+            font-size=".9rem"
+          >
+            Wizeline continues to offer a Silicon Valley culture in burgeoning innovation hubs like Mexico and Vietnam. In 2018, our Guadalajara team moved into a ...
+          </p>
+        </div>
+      </div>
+      <div
+        class="sc-bdnxRM sc-gKAaRy sc-jJMGnK flyXsy kVbCJq eVWNBB"
+      >
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/nmXMgqjQzls"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/nmXMgqjQzls/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Video Tour | Welcome to Wizeline Guadalajara
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/HYyRZiwBWc8"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/HYyRZiwBWc8/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline Guadalajara | Bringing Silicon Valley to Mexico
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/Po3VwR_NNGk"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/Po3VwR_NNGk/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline hace sentir a empleados como en casa
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/7PtYNO6g7eI"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/7PtYNO6g7eI/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              We Are Wizeline
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/YuW0CE_8i1I"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/YuW0CE_8i1I/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline Thrives in Mexico City
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/CHzlSGRvWPs"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/CHzlSGRvWPs/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/cjO2fJy8asM"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/cjO2fJy8asM/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              A Day in the Life of an Engineering Manager at Wizeline
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/zClI9OjgKXM"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/zClI9OjgKXM/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline Technical Writing Academy | Featuring Eduardo Ocejo
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/8bz9R61oY5o"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/8bz9R61oY5o/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Silicon Valley en México
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/7dJFraOqcoQ"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/7dJFraOqcoQ/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Why Wizeline? featuring Juan Pablo Villa in Mexico City
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/w-Qwc_XJrWc"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/w-Qwc_XJrWc/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline&#39;s 2020 Year in Review
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/rjir_cHTl5w"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/rjir_cHTl5w/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Why Wizeline? featuring Hugo Lopez in Mexico City
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/DcFK1x3NHGY"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/DcFK1x3NHGY/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Why Wizeline? (We&#39;re Hiring in Mexico!)
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/3BzYWAqZgFw"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/3BzYWAqZgFw/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Why Wizeline? featuring Oswaldo Herrera in Mexico City
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/3KVFmT-Tp2w"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/3KVFmT-Tp2w/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Caso de Éxito AWS: Wizeline [Spanish]
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/aKuPmY2m1Ro"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/aKuPmY2m1Ro/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline&#39;s 2019 Year in Review
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/24sTHUyWhRM"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/24sTHUyWhRM/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              [1 of 2] Wizeline CEO shares career lessons from Google
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/IxGc1gSqB3A"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/IxGc1gSqB3A/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline Data Engineering featuring Tania Reyes
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/NP1gAnbeNno"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/NP1gAnbeNno/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Wizeline Querétaro | Mexico&#39;s New Knowledge Economy (We&#39;re hiring!)
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/F6Krwu6lUc8"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/F6Krwu6lUc8/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Miriam Godinez | Women in Leadership at Wizeline
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/RFq7gfvhtCk"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/RFq7gfvhtCk/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Welcome Back to Wizeline Vietnam | Extended Version
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/E1Vq_A3WKK8"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/E1Vq_A3WKK8/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              How does Wizeline work?
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/ZmkslANDz0Q"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/ZmkslANDz0Q/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              12 Wishes from Wizeline | Happy Holidays 2019
+            </p>
+          </div>
+        </a>
+        <a
+          class="sc-kLojOw jzZDy"
+          href="/Nss3EmTDD3s"
+        >
+          <div
+            class="sc-bdnxRM sc-jSFjdj sc-iklJeh flyXsy fkwVUy cmOOQr"
+            direction="column"
+          >
+            <img
+              class="sc-fujyAs kyRtsq"
+              src="https://i.ytimg.com/vi/Nss3EmTDD3s/mqdefault.jpg"
+            />
+            <p
+              class="sc-eCApnc eGRAnL"
+              font-size=".9rem"
+              font-weight="bold"
+            >
+              Why Wizeline?
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+`;

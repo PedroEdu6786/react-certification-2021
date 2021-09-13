@@ -5,19 +5,27 @@ import { Heading, Image, Stack, Text } from '../../theme/components/Foundation.c
 export const VideoLink = styled(Link)`
   text-decoration: none;
   color: ${(props) => props.theme.font};
-`;
-
-export const VideoPreviewContainer = styled(Stack)`
-  background-color: ${(props) => props.theme.cardBackground};
-
-  max-width: 345px;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);
-  box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);
   transition: 0.3s;
 
   :hover {
     background-color: ${(props) => props.theme.shadow};
+  }
+`;
+
+export const VideoPreviewContainer = styled(Stack)`
+  background-color: ${(props) => props.theme.cardBackground};
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 5px 17px 1px rgba(0, 0, 0, 0.06);
+
+  max-width: 345px;
+  max-height: 500px;
+  overflow: hidden;
+  transition: 0.3s;
+
+  justify-content: space-between;
+  @media only screen and (min-width: 768px) {
+    height: 450px;
   }
 `;
 

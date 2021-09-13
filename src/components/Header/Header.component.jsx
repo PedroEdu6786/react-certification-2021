@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+import { useAuth0 } from '@auth0/auth0-react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 import {
   Burger,
@@ -9,15 +9,16 @@ import {
   HeaderContainer,
   LeftNav,
   Navigation,
-  Overlay,
   RightNav,
   ThemeButton,
 } from './Header.styles';
 import Search from '../Search';
 import ThemeContext from '../../providers/ThemeContentProvider/ThemeContext';
 import { setThemeAction } from '../../providers/ThemeContentProvider/ThemeContextProvider.actions';
+import { GhostButton, Overlay } from '../../theme/components/Foundation.component';
 
 function Header() {
+  const { isAuthenticated, loginWithPopup, logout } = useAuth0();
   const [openDrawer, setOpenDrawer] = useState(false);
   const { globalState, globalDispatch } = useContext(ThemeContext);
 
@@ -36,6 +37,10 @@ function Header() {
     setOpenDrawer((prevState) => !prevState);
   };
 
+  const handleLogin = async () => {
+    await loginWithPopup();
+  };
+
   return (
     <HeaderContainer data-testid="header" as="header">
       <Navigation>
@@ -44,6 +49,11 @@ function Header() {
           <DrawerItem to="/" onClick={toggleMenu}>
             Home
           </DrawerItem>
+          {isAuthenticated && (
+            <DrawerItem to="/favorites" onClick={toggleMenu}>
+              Favorites
+            </DrawerItem>
+          )}
         </Drawer>
 
         {/* Page overlay */}
@@ -67,7 +77,13 @@ function Header() {
               <FiSun data-testid="darkTheme" size="2.5rem" color="#BDBDBD" />
             )}
           </ThemeButton>
-          <FaUserCircle size="2.5rem" color="#BDBDBD" />
+          {isAuthenticated ? (
+            <GhostButton onClick={() => logout({ returnTo: window.location.origin })}>
+              Logout
+            </GhostButton>
+          ) : (
+            <GhostButton onClick={handleLogin}>Login</GhostButton>
+          )}
         </RightNav>
       </Navigation>
     </HeaderContainer>

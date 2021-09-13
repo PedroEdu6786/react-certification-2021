@@ -1,11 +1,15 @@
 import { defaultState, videosReducer } from './VideoProvider.reducer';
-import { SET_INPUT, SET_VIDEOS } from './VideoProvider.types';
 import videos from '../../mocks/videos.json';
-import { setInputAction, setVideosAction } from './VideoProvider.actions';
+import {
+  setFavoriteVideosAction,
+  setInputAction,
+  setVideosAction,
+} from './VideoProvider.actions';
 
 describe('VideoProvider', () => {
-  const testInputAction = { type: SET_INPUT, payload: 'react-testing' };
-  const testVideosAction = { type: SET_VIDEOS, payload: videos };
+  const testInputAction = setInputAction('react-testing');
+  const testVideosAction = setVideosAction(videos);
+  const testFavoriteAction = setFavoriteVideosAction(videos);
 
   describe('videoActions', () => {
     it('should receive action: { type: SET_INPUT, payload: value }', () => {
@@ -36,6 +40,19 @@ describe('VideoProvider', () => {
       };
 
       expect(videosReducer(undefined, testVideosAction)).toEqual(expectedState);
+    });
+
+    it('should perform action: SET_FAVORITE_VIDEOS correctly', () => {
+      const expectedState = {
+        ...defaultState,
+        favoriteVideos: testFavoriteAction.payload,
+      };
+
+      expect(videosReducer(undefined, testFavoriteAction)).toEqual(expectedState);
+    });
+
+    it('should perform action: default correctly', () => {
+      expect(videosReducer(undefined, { type: 'DEFAULT' })).toEqual(defaultState);
     });
   });
 });
